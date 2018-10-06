@@ -8,16 +8,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Xshopping| </title>
+    <title>XERO| </title>
     <!-- Bootstrap -->
     <base href="{{asset('')}}">
-    <link href="assets/vendors_style/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="assets/vendors_style/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="assets/vendors_style/nprogress/nprogress.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/nprogress/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="assets/vendors_style/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="assets/admin/build/css/custom.min.css" rel="stylesheet">
@@ -69,9 +69,9 @@
           <div class="clearfix"></div>
           <br />
           <div>
-              <img style="margin-bottom: 50px" src="assets/upload/config/xstore-logo.png" alt="xstore-logo.png">
+              <img style="margin-bottom: 50px" src="assets/upload/logos/black-logo.png" alt="black-logo.png">
               <br>
-              <p>©2018 All Rights Reserved. Xshopping! </p>
+              <p>©2018 All Rights Reserved. XERO! </p>
           </div>
       </div>
   </form>
@@ -107,8 +107,8 @@
       <div class="clearfix"></div>
       <br />
       <div>
-          <img src="assets/upload/config/xstore-logo.png" alt="xstore-logo.png">
-          <p>©2018 All Rights Reserved. Xshopping! </p>
+          <img src=" assets/upload/logos/black-logo.png" alt="">
+          <p>©2018 All Rights Reserved. XERO! </p>
       </div>
   </div>
 </form>

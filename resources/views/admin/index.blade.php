@@ -10,25 +10,25 @@
     <meta property="fb:admins" content="100015475292155"/> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 	  <link rel="icon" href="images/favicon.ico" type="image/ico" />
-    <title>Xshopping! | Thời Trang 4 Mùa</title>
+    <title>XERO</title>
     <base href="{{asset('')}}">
-    <link href="assets/vendors_style/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="assets/vendors_style/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="assets/vendors_style/nprogress/nprogress.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="assets/vendors_style/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/iCheck/skins/flat/green.css" rel="stylesheet">
 
     <!-- bootstrap-progressbar -->
-    <link href="assets/vendors_style/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="assets/vendors_style/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link href="assets/admin/vendors_style/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="assets/vendors_style/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-    <link href="assets/vendors_style/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
-    <link href="assets/vendors_style/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="assets/admin/vendors_style/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="assets/admin/build/css/custom.min.css" rel="stylesheet">
 
@@ -85,48 +85,48 @@
     </div>
 
     <!-- jQuery -->
-    <script src="assets/vendors_style/jquery/dist/jquery.min.js"></script>
+    <script src="assets/admin/vendors_style/jquery/dist/jquery.min.js"></script>
     <!-- TypeHead js -->
     <script src="assets/admin/js/typeahead.bundle.min.js"></script>
     <script src="assets/admin/js/bloodhound.min.js"></script>
     <!-- Bootstrap -->
-    <script src="assets/vendors_style/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/admin/vendors_style/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <!-- FastClick -->
-    <script src="assets/vendors_style/fastclick/lib/fastclick.js"></script>
+    <script src="assets/admin/vendors_style/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
-    <script src="assets/vendors_style/nprogress/nprogress.js"></script>
+    <script src="assets/admin/vendors_style/nprogress/nprogress.js"></script>
     <!-- Chart.js -->
-    <script src="assets/vendors_style/Chart.js/dist/Chart.min.js"></script>
+    <script src="assets/admin/vendors_style/Chart.js/dist/Chart.min.js"></script>
     <!-- gauge.js -->
-    <script src="assets/vendors_style/gauge.js/dist/gauge.min.js"></script>
+    <script src="assets/admin/vendors_style/gauge.js/dist/gauge.min.js"></script>
     <!-- bootstrap-progressbar -->
-    <script src="assets/vendors_style/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="assets/admin/vendors_style/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
     <!-- iCheck -->
-    <script src="assets/vendors_style/iCheck/icheck.min.js"></script>
+    <script src="assets/admin/vendors_style/iCheck/icheck.min.js"></script>
     <!-- Skycons -->
-    <script src="assets/vendors_style/skycons/skycons.js"></script>
+    <script src="assets/admin/vendors_style/skycons/skycons.js"></script>
     <!-- Flot -->
-    <script src="assets/vendors_style/Flot/jquery.flot.js"></script>
-    <script src="assets/vendors_style/Flot/jquery.flot.pie.js"></script>
-    <script src="assets/vendors_style/Flot/jquery.flot.time.js"></script>
-    <script src="assets/vendors_style/Flot/jquery.flot.stack.js"></script>
-    <script src="assets/vendors_style/Flot/jquery.flot.resize.js"></script>
+    <script src="assets/admin/vendors_style/Flot/jquery.flot.js"></script>
+    <script src="assets/admin/vendors_style/Flot/jquery.flot.pie.js"></script>
+    <script src="assets/admin/vendors_style/Flot/jquery.flot.time.js"></script>
+    <script src="assets/admin/vendors_style/Flot/jquery.flot.stack.js"></script>
+    <script src="assets/admin/vendors_style/Flot/jquery.flot.resize.js"></script>
     <!-- Flot plugins -->
-    <script src="assets/vendors_style/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="assets/vendors_style/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="assets/vendors_style/flot.curvedlines/curvedLines.js"></script>
+    <script src="assets/admin/vendors_style/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="assets/admin/vendors_style/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="assets/admin/vendors_style/flot.curvedlines/curvedLines.js"></script>
     <!-- DateJS -->
-    <script src="assets/vendors_style/DateJS/build/date.js"></script>
+    <script src="assets/admin/vendors_style/DateJS/build/date.js"></script>
     <!-- JQVMap -->
-    <script src="assets/vendors_style/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="assets/vendors_style/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="assets/admin/vendors_style/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="assets/admin/vendors_style/jqvmap/dist/maps/jquery.vmap.world.js"></script>
      <!-- Ion.RangeSlider -->
-    <script src="assets/vendors_style/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
-    <script src="assets/vendors_style/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="assets/admin/vendors_style/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+    <script src="assets/admin/vendors_style/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
     <!-- bootstrap-daterangepicker -->
-    <script src="assets/vendors_style/moment/min/moment.min.js"></script>
-    <script src="assets/vendors_style/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="assets/admin/vendors_style/moment/min/moment.min.js"></script>
+    <script src="assets/admin/vendors_style/bootstrap-daterangepicker/daterangepicker.js"></script>
 
     <script language="javascript" src="ckeditor/ckeditor.js" type="text/javascript"></script>
     <!-- Custom Theme Scripts -->

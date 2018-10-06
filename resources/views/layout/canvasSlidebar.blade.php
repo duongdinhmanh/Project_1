@@ -6,7 +6,7 @@
         <div class="off-canvas-content">
             <aside class="canvas-widget">
                 <div class="logo text-center">
-                    <img src="assets/website/img/logos/black-logo.png" alt="logo">
+                    <img src="assets/upload/logos/logo.png" alt="logo">
                 </div>
             </aside>
             <aside class="canvas-widget">

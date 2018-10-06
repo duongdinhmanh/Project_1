@@ -2,11 +2,11 @@
 <html lang="zxx">
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    {{-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         '../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PDTWJ3Z');</script>
+    })(window,document,'script','dataLayer','GTM-PDTWJ3Z');</script> --}}
     <!-- End Google Tag Manager -->
      <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Xero - Real Estate HTML Template</title>
@@ -30,11 +30,11 @@
     <link rel="shortcut icon" href="assets/website/img/favicon.ico" type="image/x-icon" >
 
     <!-- Google fonts -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPoppins:400,500,700,800,900%7CRoboto:100,300,400,400i,500,700">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPoppins:400,500,700,800,900%7CRoboto:100,300,400,400i,500,700">
 
     <!-- Custom Stylesheet -->
     <link type="text/css" rel="stylesheet" href="assets/website/css/style.css">
-    <link rel="stylesheet" type="text/css" id="style_sheet" href="assets/website/css/skins/default.css">
+    <link rel="stylesheet" type="text/css"  href="assets/css/skins/default.css">
 
 </head>
 <body id="top">
@@ -109,6 +109,7 @@
 @include('layout.canvasSlidebar')
 
 <!-- External JS libraries -->
+<!-- Latest compiled and minified CSS & JS -->
 <script src="assets/website/js/jquery-2.2.0.min.js"></script>
 <script src="assets/website/js/popper.min.js"></script>
 <script src="assets/website/js/bootstrap.min.js"></script>
@@ -136,5 +137,4 @@
 
 </body>
 
-<!-- Mirrored from storage.googleapis.com/themevessel-xero/index-8.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Jul 2018 12:16:34 GMT -->
 </html>

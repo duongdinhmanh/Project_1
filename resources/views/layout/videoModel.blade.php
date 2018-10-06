@@ -26,7 +26,7 @@
                             <div id="modalCarousel" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner" role="listbox">
                                     <div class="carousel-item active">
-                                        <iframe class="modalIframe" src="https://www.youtube.com/embed/5e0LxrLSzok"  allowfullscreen></iframe>
+                                        <iframe class="modalIframe" src="https://www.youtube.com/embed/5e0LxrLSzok"  allowfullscreen ></iframe>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="assets/website/img/property-1.jpg" alt="Test ALT">

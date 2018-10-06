@@ -30,12 +30,12 @@ Route::post('admin/login', [
 Route::get('admin/logOut', 'admin\loginController@AdminlogOut');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['adminLogin', 'locale']], function () {
-	Route::resource('Dashboard', 'admin\DashboardController');
+	Route::resource('dashboard', 'admin\DashboardController');
 	Route::get('change-language/{lang}', [
 		'as' => 'change_lang',
 		'uses' => 'admin\DashboardController@change_lang',
 	]);
 
-	// code tiếp theo
+	Route::resource('apartments', 'admin\apartmentsController');
 
 });

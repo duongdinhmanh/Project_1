@@ -36,13 +36,13 @@ class loginController extends Controller {
 		if (Auth::attempt($login)) {
 			Session::put('website_language', config('app.locale'));
 			// ham attempt de kiem tra thong tin dang nhap co trung voi DB
-			return redirect()->route('Dashboard.index');
+			return redirect()->route('dashboard.index');
 		} else {
 			return redirect()->back()->with('danger', 'login failed, account does not exist..!');
 		}
 	}
 	public function AdminlogOut() {
 		Auth::logout();
-		return redirect()->route('Login');
+		return redirect()->route('login');
 	}
 }

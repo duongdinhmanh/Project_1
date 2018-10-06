@@ -4,7 +4,7 @@
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg navbar-light rounded">
                     <a class="navbar-brand logo navbar-brand d-flex w-50 mr-auto" href="">
-                        <img src=" assets/website/img/logos/logo.png" alt="logo">
+                        <img src="assets/upload/logos/logo.png" alt="logo">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="fa fa-bars"></span>
@@ -16,14 +16,14 @@
                                     Index
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="index.html">Index 1</a></li>
-                                    <li><a class="dropdown-item" href="index-2.html">Index 2</a></li>
-                                    <li><a class="dropdown-item" href="index-3.html">Index 3 (Map)</a></li>
-                                    <li><a class="dropdown-item" href="index-4.html">Index 4</a></li>
-                                    <li><a class="dropdown-item" href="index-5.html">Index 5</a></li>
-                                    <li><a class="dropdown-item" href="index-6.html">Index 6</a></li>
-                                    <li><a class="dropdown-item" href="index-7.html">Index 7</a></li>
-                                    <li><a class="dropdown-item" href="index-8.html">Index 8 (Video)</a></li>
+                                    <li><a class="dropdown-item" href="">Index 1</a></li>
+                                    <li><a class="dropdown-item" href="">Index 2</a></li>
+                                    <li><a class="dropdown-item" href="">Index 3 (Map)</a></li>
+                                    <li><a class="dropdown-item" href="">Index 4</a></li>
+                                    <li><a class="dropdown-item" href="">Index 5</a></li>
+                                    <li><a class="dropdown-item" href="">Index 6</a></li>
+                                    <li><a class="dropdown-item" href="">Index 7</a></li>
+                                    <li><a class="dropdown-item" href="">Index 8 (Video)</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
