@@ -19,8 +19,14 @@ class CreateCommentsTable extends Migration
             $table->integer('apartment_id')->unsigned();
             $table->longText('content');
 
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
-            $table->foreign('apartment_id')->references('id')->on('apartment')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')
+                ->on('customers')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('apartment_id')->references('id')
+                ->on('apartments')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

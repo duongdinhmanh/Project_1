@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDistrictTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateDistrictTable extends Migration
      */
     public function up()
     {
-        Schema::create('district', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('district_id');
             $table->string('name');
-            $table->string('type');
-            $table->string('location');
+            $table->integer('parent_id');
+            $table->string('slug');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateDistrictTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('district');
+        Schema::dropIfExists('categories');
     }
 }
