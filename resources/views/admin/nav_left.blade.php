@@ -2,7 +2,7 @@
   <div class="navbar nav_title" style="border: 0;">
      <div class="navbar nav_title" style="border: 0;">
       <a href="index.html" class="site_title"><i class="fa fa-paw">
-        <img style="max-width: 80%; height: auto; overflow: hidden;" src="assets/upload/config/xstore-logo.png" alt="xstore-logo.png">
+        <img style="max-width: 80%; height: auto; overflow: hidden;" src="assets/upload/logos/logo.png" alt="logo.png">
       </i>
       </a>
     </div>
@@ -12,7 +12,7 @@
   <div class="profile clearfix">
      @if (Auth::check())
     <div class="profile_pic">
-      <img src="assets/upload/config/img.jpg" alt="assets." class="img-circle profile_img">
+      <img src="{{ config('path.image_logo_admin') }}/img.jpg" alt="assets." class="img-circle profile_img">
     </div>
     <div class="profile_info">
        <span>Welcome,</span>
@@ -31,13 +31,13 @@
       <ul class="nav side-menu">
         <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="{{ route('Dashboard.index') }}">Dashboard</a></li>
+            <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
           </ul>
         </li>
         <li><a> <i class="fa fa-cubes"></i></i> Apartments <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="">List of Apartments</a></li>
-            <li><a href="">Create New Apartments</a></li>
+            <li><a href="{{ route('apartments.index') }}">List of Apartments</a></li>
+            <li><a href="{{ route('apartments.create') }}">Create New Apartments</a></li>
           </ul>
         </li>
         <li><a><i class="fa fa-sitemap ion"></i>Category <span class="fa fa-chevron-down"></span></a>

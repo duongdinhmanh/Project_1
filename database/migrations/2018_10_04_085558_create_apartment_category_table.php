@@ -17,8 +17,14 @@ class CreateApartmentCategoryTable extends Migration
             $table->increments('id');
             $table->integer('apartment_id')->unsigned();
             $table->integer('category_id')->unsigned();
-            $table->foreign('apartment_id')->references('id')->on('apartment')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
+            $table->foreign('apartment_id')
+                ->references('id')->on('apartments')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreign('category_id')
+                ->references('id')->on('categories')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
             $table->timestamps();
         });

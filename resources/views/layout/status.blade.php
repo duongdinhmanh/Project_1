@@ -1,4 +1,4 @@
-<div class="testimonial overview-bgi wow fadeInUp delay-04s" style="background-image: url(&quot;assets/website/img/testimonial-property-2.jpg&quot;); visibility: visible; animation-name: fadeInUp;">
+<div class="testimonial overview-bgi wow fadeInUp delay-04s" style="background-image: url(&quot;assets/upload/img/testimonial-property-2.jpg&quot;); visibility: visible; animation-name: fadeInUp;">
     <div class="container">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -15,7 +15,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item">
                                 <div class="avatar">
-                                    <img src="assets/website/img/avatar/avatar.jpg" alt="avatar" class="img-fluid rounded-circle">
+                                    <img src="assets/upload/img/avatar/avatar.jpg" alt="avatar" class="img-fluid rounded-circle">
                                 </div>
                                 <p class="lead">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -26,7 +26,7 @@
                             </div>
                             <div class="carousel-item active">
                                 <div class="avatar">
-                                    <img src="assets/website/img/avatar/avatar-2.jpg" alt="avatar-2" class="img-fluid rounded-circle">
+                                    <img src="assets/upload/img/avatar/avatar-2.jpg" alt="avatar-2" class="img-fluid rounded-circle">
                                 </div>
                                 <p class="lead">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -37,7 +37,7 @@
                             </div>
                             <div class="carousel-item">
                                 <div class="avatar">
-                                    <img src="assets/website/img/avatar/avatar-3.jpg" alt="avatar-3" class="img-fluid rounded-circle">
+                                    <img src="assets/upload/img/avatar/avatar-3.jpg" alt="avatar-3" class="img-fluid rounded-circle">
                                 </div>
                                 <p class="lead">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
