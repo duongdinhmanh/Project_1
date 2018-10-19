@@ -12,7 +12,7 @@
   <div class="profile clearfix">
      @if (Auth::check())
     <div class="profile_pic">
-      <img src="assets/upload/config/img.jpg" alt="assets." class="img-circle profile_img">
+      <img src="{{ config('path.image_logo_admin') }}/img.jpg" alt="assets." class="img-circle profile_img">
     </div>
     <div class="profile_info">
        <span>Welcome,</span>

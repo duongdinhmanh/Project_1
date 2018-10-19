@@ -29,10 +29,10 @@
                                         <iframe class="modalIframe" src="https://www.youtube.com/embed/5e0LxrLSzok"  allowfullscreen ></iframe>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="assets/website/img/property-1.jpg" alt="Test ALT">
+                                        <img src="assets/upload/img/property-1.jpg" alt="Test ALT">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="assets/website/img/property-1.jpg" alt="Test ALT">
+                                        <img src="assets/upload/img/property-1.jpg" alt="Test ALT">
                                     </div>
                                 </div>
                                 <a class="control control-prev" href="#modalCarousel" role="button" data-slide="prev">

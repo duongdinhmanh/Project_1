@@ -4,7 +4,6 @@
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                 <div class="footer-item">
                     <h4>Contact Us</h4>
-
                     <ul class="contact-info">
                         <li>
                             Address: 20/F Green Road, Dhanmondi, Dhaka
@@ -19,7 +18,6 @@
                             Fax: +XXXX XXXX XXX
                         </li>
                     </ul>
-
                     <ul class="social-list clearfix">
                         <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
@@ -64,7 +62,7 @@
                     <h4>Recent Properties</h4>
                     <div class="media mb-4">
                         <a class="pr-4" href="properties-details.html">
-                            <img src="assets/website/img/sub-property/sub-property.jpg" alt="sub-property">
+                            <img src="assets/upload/img/sub-property/sub-property.jpg" alt="sub-property">
                         </a>
                         <div class="media-body align-self-center">
                             <h5>
@@ -76,7 +74,7 @@
                     </div>
                     <div class="media mb-4">
                         <a class="pr-4" href="properties-details.html">
-                            <img src="assets/website/img/sub-property/sub-property-2.jpg" alt="sub-property-2">
+                            <img src="assets/upload/img/sub-property/sub-property-2.jpg" alt="sub-property-2">
                         </a>
                         <div class="media-body align-self-center">
                             <h5>
@@ -88,7 +86,7 @@
                     </div>
                     <div class="media">
                         <a class="pr-4" href="properties-details.html">
-                            <img src="assets/website/img/sub-property/sub-property-3.jpg" alt="sub-property-3">
+                            <img src="assets/upload/img/sub-property/sub-property-3.jpg" alt="sub-property-3">
                         </a>
                         <div class="media-body align-self-center">
                             <h5>

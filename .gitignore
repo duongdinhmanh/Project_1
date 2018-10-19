@@ -12,3 +12,10 @@ npm-debug.log
 yarn-error.log
 .env
 .phpunit.result.cache
+node_modules
+/public/ckeditor
+/public/vendor
+/public/assets
+/public/css
+/public/js
+/public

@@ -12,30 +12,35 @@
  */
 //*************** Phan frontend *****************
 Route::get('/', function () {
-	return view('website');
-
+    return view('website');
 });
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'Web/HomeController@getIndex',
+]);
 
 //*************** Phan Admin *****************
 
 Route::get('admin/login', [
-	'as' => 'login',
-	'uses' => 'admin\loginController@ViewLogin',
+    'as' => 'login',
+    'uses' => 'Admin\loginController@ViewLogin',
 ]);
 Route::post('admin/login', [
-	'as' => 'LoginAdmin',
-	'uses' => 'admin\loginController@PostLogin',
+    'as' => 'LoginAdmin',
+    'uses' => 'Admin\loginController@PostLogin',
 ]);
 
-Route::get('admin/logOut', 'admin\loginController@AdminlogOut');
+Route::get('admin/logOut', 'Admin\loginController@AdminlogOut');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['adminLogin', 'locale']], function () {
-	Route::resource('dashboard', 'admin\DashboardController');
-	Route::get('change-language/{lang}', [
-		'as' => 'change_lang',
-		'uses' => 'admin\DashboardController@change_lang',
-	]);
+    Route::resource('dashboard', 'Admin\DashboardController');
+    Route::get('change-language/{lang}', [
+        'as' => 'change_lang',
+        'uses' => 'Admin\DashboardController@change_lang',
+    ]);
 
-	Route::resource('apartments', 'admin\apartmentsController');
+    Route::resource('apartments', 'Admin\ApartmentController');
+    Route::post('apartments-delete\{id}', 'Admin\ApartmentController@delete')->name('delete_apartment');
 
+    Route::get('apartment-data', 'Admin\ApartmentController@getData')->name('getdata-pro');
 });

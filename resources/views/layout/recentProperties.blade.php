@@ -10,19 +10,19 @@
                         <!-- main slider carousel items -->
                         <div class="carousel-inner">
                             <div class="active item carousel-item" data-slide-number="0">
-                                <img src="assets/website/img/property-4.jpg" class="img-fluid" alt="property-4">
+                                <img src="assets/upload/img/property-4.jpg" class="img-fluid" alt="property-4">
                             </div>
                             <div class="item carousel-item" data-slide-number="1">
-                                <img src="assets/website/img/property-6.jpg" class="img-fluid" alt="property-6">
+                                <img src="assets/upload/img/property-6.jpg" class="img-fluid" alt="property-6">
                             </div>
                             <div class="item carousel-item" data-slide-number="2">
-                                <img src="assets/website/img/property-1.jpg" class="img-fluid" alt="property-1">
+                                <img src="assets/upload/img/property-1.jpg" class="img-fluid" alt="property-1">
                             </div>
                             <div class="item carousel-item" data-slide-number="4">
-                                <img src="assets/website/img/property-5.jpg" class="img-fluid" alt="property-5">
+                                <img src="assets/upload/img/property-5.jpg" class="img-fluid" alt="property-5">
                             </div>
                             <div class="item carousel-item" data-slide-number="5">
-                                <img src="assets/website/img/property-8.jpg" class="img-fluid" alt="property-8">
+                                <img src="assets/upload/img/property-8.jpg" class="img-fluid" alt="property-8">
                             </div>
 
                             <a class="carousel-control left" href="#propertiesDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>

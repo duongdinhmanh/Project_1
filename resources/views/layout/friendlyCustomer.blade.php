@@ -8,7 +8,7 @@
                 <div class="agent-2">
                     <div class="agent-photo">
                         <a href="agent-detail.html">
-                            <img src="assets/website/img/avatar/avatar-5.jpg" alt="avatar-5" class="img-fluid">
+                            <img src="assets/upload/avatar/avatar-5.jpg" alt="avatar-5" class="img-fluid">
                         </a>
                     </div>
                     <div class="agent-details">
@@ -27,7 +27,7 @@
                 <div class="agent-2">
                     <div class="agent-photo">
                         <a href="agent-detail.html">
-                            <img src="assets/website/img/avatar/avatar-6.jpg" alt="avatar-6" class="img-fluid">
+                            <img src="assets/upload/avatar/avatar-6.jpg" alt="avatar-6" class="img-fluid">
                         </a>
                     </div>
                     <div class="agent-details">
@@ -46,7 +46,7 @@
                 <div class="agent-2">
                     <div class="agent-photo">
                         <a href="agent-detail.html">
-                            <img src="assets/website/img/avatar/avatar-7.jpg" alt="avatar-7" class="img-fluid">
+                            <img src="assets/upload/avatar/avatar-7.jpg" alt="avatar-7" class="img-fluid">
                         </a>
                     </div>
                     <div class="agent-details">
@@ -65,7 +65,7 @@
                 <div class="agent-2">
                     <div class="agent-photo">
                         <a href="agent-detail.html">
-                            <img src="assets/website/img/avatar/avatar-11.jpg" alt="avatar-11" class="img-fluid">
+                            <img src="assets/upload/avatar/avatar-11.jpg" alt="avatar-11" class="img-fluid">
                         </a>
                     </div>
                     <div class="agent-details">

@@ -8,7 +8,7 @@
                 <div class="row blog-list">
                     <div class="col-lg-5 col-md-12 col-pad ">
                         <div class="photo">
-                            <img src="assets/website/img/blog/blog-6.jpg" alt="blog-4" class="img-fluid fit-cover h-100">
+                            <img src="assets/upload/img/blog/blog-6.jpg" alt="blog-4" class="img-fluid fit-cover h-100">
                             <div class="date-box">
                                 <h5>03</h5>
                                 <h5>May</h5>
@@ -33,8 +33,8 @@
                 <div class="row blog-list">
                     <div class="col-lg-5 col-md-12 col-pad ">
                         <div class="photo">
-                            <img src="assets/website/img/blog/blog-5.jpg" alt="blog-5" class="img-fluid fit-cover h-100 d-none d-xl-block d-lg-block d-md-block">
-                            <img src="assets/website/img/blog/blog.jpg" alt="blog" class="img-fluid d-md-none d-lg-none d-xl-none">
+                            <img src="assets/upload/img/blog/blog-5.jpg" alt="blog-5" class="img-fluid fit-cover h-100 d-none d-xl-block d-lg-block d-md-block">
+                            <img src="assets/upload/img/blog/blog.jpg" alt="blog" class="img-fluid d-md-none d-lg-none d-xl-none">
                             <div class="date-box">
                                 <h5>03</h5>
                                 <h5>May</h5>
