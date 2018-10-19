@@ -134,6 +134,8 @@
 <script src="bower_components/demo-bower/assets/website/js/ie-emulation-modes-warning.js"></script>
 <!-- Custom JS Script -->
 <script  src="bower_components/demo-bower/assets/website/js/app.js"></script>
+<script src="js/web.js"></script>
+
 
 </body>
 

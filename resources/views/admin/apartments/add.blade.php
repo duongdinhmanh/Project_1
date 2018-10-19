@@ -99,17 +99,17 @@
                     <div class="item form-group">
                         {!!   htmlspecialchars_decode( Form::label( 'Bedrooms', trans( 'config.bedrooms' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
                         <div class="col-md-2 col-sm-2 col-xs-2">
-                            {!! Form::select('bedrooms', ['1' => '1', '2' => '2', '3' => '3', '4' => '4'], null, [ 'class' => 'form-control col-md-7 col-xs-12' ]) !!}
+                            {!! Form::select('bedrooms',config('size.array_option'), null, [ 'class' => 'form-control col-md-7 col-xs-12' ]) !!}
                         </div>
                         <div class="item form-group">
                             {!!   htmlspecialchars_decode( Form::label( 'Bathrooms', trans( 'config.bathrooms' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
                             <div class="col-md-2 col-sm-2 col-xs-2">
-                                {!! Form::select('bathrooms', ['1' => '1', '2' => '2', '3' => '3', '4' => '4'], null, [ 'class' => 'form-control col-md-7 col-xs-12' ]) !!}
+                                {!! Form::select('bathrooms', config('size.array_option'), null, [ 'class' => 'form-control col-md-7 col-xs-12' ]) !!}
                             </div>
                             <div class="item form-group">
                                 {!!   htmlspecialchars_decode( Form::label( 'Garage', trans( 'config.garage' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
                                 <div class="col-md-2 col-sm-2 col-xs-2">
-                                    {!! Form::select('garage', ['1' => '1', '2' => '2', '3' => '3', '4' => '4'], null, [ 'class' => 'form-control col-md-7 col-xs-12' ]) !!}
+                                    {!! Form::select('garage', config('size.array_option'), null, [ 'class' => 'form-control col-md-7 col-xs-12' ]) !!}
                                 </div>
                             </div>
                         </div>

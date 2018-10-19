@@ -11,8 +11,16 @@
 |
  */
 //*************** Phan frontend *****************
-Route::get('/', function () {
-    return view('website');
+
+Route::group(['middleware' => 'locale'], function () {
+    Route::get('/', [
+        'as' => 'home',
+        'uses' => 'Web\HomeController@getIndex',
+    ]);
+
+    // Route::group(['prefix' => 'ajax'], function () {
+    //     Route::get('district,{provinceId}', 'AjaxController@getDistrict');
+    // });
 });
 Route::get('/', [
     'as' => 'home',

@@ -122,7 +122,7 @@
                         {!!   htmlspecialchars_decode( Form::label( 'Images', trans( 'config.imgPro' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
                         <div class="col-md-4 col-sm-4 col-xs-12">
                             <a href="javascript:open_popup( '{!! url( '' ) !!}/assets/filemanager/dialog.php?type=1&popup=1&field_id=fieldID' )" class="thumbnail open-file-img">
-                                {!!  Html::image( '', 'no-image.png',[ 'class'=>'imagePreview' ] )  !!}
+                                {!!  Html::image( $apartmentEdit->image, $apartmentEdit->image,[ 'class'=>'imagePreview' ] )  !!}
                             </a>
                         </div>
                     </div>
