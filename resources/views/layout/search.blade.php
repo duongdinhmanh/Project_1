@@ -11,6 +11,7 @@
                         </div>
                         <div class="col-6 col-lg-3 col-md-3">
                             <div class="form-group">
+                                {!! Form::select('districts', $districts, null, [ 'class' => 'selectpicker search-fields', 'id' => 'district' ]) !!}
                                 <select class="selectpicker search-fields" name="property-status">
                                     <option>District</option>
                                     <option>For Sale</option>
@@ -88,3 +89,4 @@
         </div>
     </div>
 </div>
+
