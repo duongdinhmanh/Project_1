@@ -11,8 +11,17 @@
 |
  */
 //*************** Phan frontend *****************
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('website');
+=======
+
+Route::group(['middleware' => 'locale'], function () {
+    Route::get('/', [
+        'as' => 'home',
+        'uses' => 'Web\HomeController@getIndex',
+    ]);
+>>>>>>> create, edit, delete apartment
 });
 Route::get('/', [
     'as' => 'home',

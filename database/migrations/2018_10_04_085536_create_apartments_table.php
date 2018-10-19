@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateApartmentsTable extends Migration
 {
@@ -18,11 +18,15 @@ class CreateApartmentsTable extends Migration
             $table->string('post_id');
             $table->string('name');
             $table->string('slug');
-            $table->string('address');
+            $table->text('desc');
+            $table->string('img_detail');
             $table->text('desc');
             $table->float('acreage'); //dien tich
             $table->double('price');
-            $table->double('sale'); //gia giam gia
+            $table->string('address');
+            $table->integer('bedrooms');
+            $table->integer('bathrooms');
+            $table->integer('garage');
             $table->string('image');
             $table->string('video');
             $table->text('detail');

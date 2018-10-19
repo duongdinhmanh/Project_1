@@ -162,6 +162,14 @@ $('#list_img_pro_color').on('click', '.del_pro_img', function() {
     $(this).closest('li').remove();
 }
 
+<<<<<<< HEAD
+=======
+// search dia/chi
+ $('#province').change(function(){
+        alert('ok');
+ })
+
+>>>>>>> create, edit, delete apartment
 });
 // Phần config
 
