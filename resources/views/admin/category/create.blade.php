@@ -16,9 +16,9 @@
             {{--breadcrumb--}}
             <div class="title_right">
                 <ol class="breadcrumb">
-                    <li><a href="{{ action('Admin\DashboardController@index') }}">Home</a></li>
-                    <li><a href="{{ route('categories.index') }}">List Categories</a></li>
-                    <li class="active">Create Category</li>
+                    <li><a href="{{ action('Admin\DashboardController@index') }}">{{ trans('category.home') }}</a></li>
+                    <li><a href="{{ route('categories.index') }}">{{ trans('category.list_categories') }}</a></li>
+                    <li class="active">{{ trans('category.create_category') }}</li>
                 </ol>
             </div>
         </div>

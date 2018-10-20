@@ -254,3 +254,78 @@ ul .bar_tabs {
   right: 30px;
 }
 
+/*category*/
+
+h3 i {
+  padding-right: 20px;
+}
+
+.radi {
+  position: relative;
+}
+
+.inp_radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.display_form {
+  display: inline;
+}
+
+.padding_title {
+  padding-right: 20px;
+}
+
+th .display {
+  display: table-cell;
+}
+
+div .position {
+  position: relative;
+}
+
+input .position {
+  position: absolute;
+  opacity: 0;
+}
+
+.bg_color {
+  background: #edfffd !important;
+}
+
+a i .padding {
+  padding: 3px;
+}
+
+/*post*/
+
+tr .show content {
+  max-width: 550px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+tr img {
+  width: 600px;
+}
+
+tr .fix_width {
+  width: 30%;
+}
+
+div .size_img {
+  height: 100%;
+}
+
+a .mar_bot {
+  margin-bottom: 10px !important;
+}
+
+/*breadcrumbs*/
+
+.breadcrumb {
+  padding-top: 15px;
+  padding-right: 15px;
+}
+

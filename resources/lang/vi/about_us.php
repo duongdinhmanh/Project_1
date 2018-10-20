@@ -1,0 +1,70 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: quantien
+ * Date: 15/10/2018
+ * Time: 13:20
+ */
+return [
+    'create_about_us_success' => 'A new about us has been created',
+    'update_about_us_success' => 'The about us has been updated!',
+    'delete_about_us_success' => 'The about us :name has been deleted!',
+    'update_status' => 'Update Succsessfully!',
+    'home' => 'Home',
+    'list_aboutus' => 'List About Us',
+    'create_aboutus' => 'Create About Us',
+    'edit_aboutus' => 'Edit About Us',
+    'show_aboutus' => 'Show About Us',
+//    create
+    'title' => 'ADD - NEW - ABOUT US',
+    'title_about_us' => 'About Us Create',
+    'label_title' => 'Title',
+    'place_title' => 'Title About us...',
+    'hint_title' => '* The title should not contain a sign (-), the letters separated by a space... (Title About Us...)',
+    'label_slug' => 'Slug',
+    'place_slug' => 'slug-about...',
+    'hint_slug' => '* You can change the slug, the words are not capitalized and separated by dashes... ( how-are-you...)',
+    'label_content' => 'Content',
+    'place_content' => 'Content...',
+    'hint_content' => '* The content can contain special characters(-,?,!,@,...), the letters separated by a space...( Content About Us...)',
+    'label_awards' => 'Awards',
+    'hint_awards' => '* Input number...',
+    'label_winning_awards' => 'Winning Awards',
+    'hint_winning_awards' => '* Input number...',
+    'label_line_of_code' => 'Line Of Code',
+    'hint_line_of_code' => '* Input number...',
+    'label_happy_clients' => 'Happy Clients',
+    'hint_happy_clients' => '* Input number...',
+    'label_status' => 'Status',
+    'label_status_enable' => 'Enable',
+    'label_status_disable' => 'Disable',
+    'cancel' => 'Cancel',
+    'submit' => 'Submit',
+//    edit
+    'title_edit' => 'About Us Edit',
+    'lable_title' => 'Title',
+//    index
+    'title_list' => 'LIST - About Us',
+    'all_about_us' => ' All About Us',
+    'btn_create' => ' Create About Us',
+    'col_id' => 'ID',
+    'col_title' => 'Title',
+    'col_slug' => 'Slug',
+    'col_content' => 'Content',
+    'col_awards' => 'Awards',
+    'col_winning_awards' => 'Winning Awards',
+    'col_line_of_code' => 'Line Of Code',
+    'col_happy_clients' => 'Happy Clients',
+    'col_created_at' => 'Created At',
+    'col_updated_at' => 'Updated At',
+    'col_status' => 'Status',
+    'col_action' => 'Action',
+    'edit' => ' Edit',
+    'delete' => ' Delete',
+    'title_disable' => 'Disable item About Us',
+    'title_enable' => 'Enable item About Us',
+//    show
+    'title_show' => 'SHOW - ABOUT US',
+    'label_detail_about_us' => 'AboutUs Detail',
+    'label_global_about_us' => 'Global About Us',
+];

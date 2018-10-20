@@ -18,8 +18,8 @@
             {{--breadcrumb--}}
             <div class="title_right">
                 <ol class="breadcrumb">
-                    <li><a href="{{ action('Admin\DashboardController@index') }}">Home</a></li>
-                    <li class="active">List Categories</li>
+                    <li><a href="{{ action('Admin\DashboardController@index') }}">{{ trans('category.home') }}</a></li>
+                    <li class="active">{{ trans('category.list_categories') }}</li>
                 </ol>
             </div>
         </div>

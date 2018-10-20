@@ -45,46 +45,32 @@
                 </li>
                 <li><a><i class="fa fa-sitemap ion"></i>Category <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="{{ route('categories.index') }}">List of Category</a></li>
+                        <li><a href="{{ route('categories.index') }}">List of Categories</a></li>
                         <li><a href="{{ route('categories.create') }}">Create New Category</a></li>
                     </ul>
                 </li>
-                <li><a><i class="fa fa-edit"></i> Post <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-edit"></i> Posts <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="form.html">General Form</a></li>
-                        <li><a href="form_advanced.html">Advanced Components</a></li>
-                        <li><a href="form_validation.html">Form Validation</a></li>
-                        <li><a href="form_wizards.html">Form Wizard</a></li>
-                        <li><a href="form_upload.html">Form Upload</a></li>
-                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                        <li><a href="{{ route('posts.index') }}">List of Posts</a></li>
+                        <li><a href="{{ route('posts.create') }}">Create New Post</a></li>
                     </ul>
                 </li>
-                <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-desktop"></i> Pages <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="general_elements.html">General Elements</a></li>
-                        <li><a href="media_gallery.html">Media Gallery</a></li>
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="glyphicons.html">Glyphicons</a></li>
-                        <li><a href="widgets.html">Widgets</a></li>
-                        <li><a href="invoice.html">Invoice</a></li>
-                        <li><a href="inbox.html">Inbox</a></li>
-                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="{{ route('pages.index') }}">List of Pages</a></li>
+                        <li><a href="{{ route('pages.create') }}">Create New Page</a></li>
                     </ul>
                 </li>
-                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-bar-chart-o"></i> Slides <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="chartjs.html">Chart JS</a></li>
-                        <li><a href="chartjs2.html">Chart JS2</a></li>
-                        <li><a href="morisjs.html">Moris JS</a></li>
-                        <li><a href="echarts.html">ECharts</a></li>
-                        <li><a href="other_charts.html">Other Charts</a></li>
+                        <li><a href="{{ route('slides.index') }}">List of Slides</a></li>
+                        <li><a href="{{ route('slides.create') }}">Create New Slide</a></li>
                     </ul>
                 </li>
-                <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-clone"></i>About Us <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                        <li><a href="{{ route('about_us.index') }}">List of AboutUs</a></li>
+                        <li><a href="{{ route('about_us.create') }}">Create New AboutUs</a></li>
                     </ul>
                 </li>
             </ul>

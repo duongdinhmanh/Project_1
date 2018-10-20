@@ -54,9 +54,36 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminLogin', 'locale']], fu
 
     //category
     Route::resource('/categories', 'Admin\CategoryController')->except(['show']);
-//hidden and show status of category
+    //hidden and show status of category
     Route::post('hidden_status_categories/{id?}',
         'Admin\CategoryController@hiddenStatusCategories')->name('hidden_status_categories');
     Route::post('show_status_categories/{id?}',
         'Admin\CategoryController@showStatusCategories')->name('show_status_categories');
+
+    //posts
+    Route::resource('/posts', 'Admin\PostController');
+    //hidden and show status of post
+    Route::post('hidden_status_posts/{id?}', 'Admin\PostController@hiddenStatusPosts')->name('hidden_status_posts');
+    Route::post('show_status_posts/{id?}', 'Admin\PostController@showStatusPosts')->name('show_status_posts');
+
+    //pages
+    Route::resource('/pages', 'Admin\PageController');
+    //hidden and show status of page
+    Route::post('hidden_status_pages/{id?}', 'Admin\PageController@hiddenStatusPages')->name('hidden_status_pages');
+    Route::post('show_status_pages/{id?}', 'Admin\PageController@showStatusPages')->name('show_status_pages');
+
+    //slides
+    Route::resource('/slides', 'Admin\SlideController');
+    //hidden and show status of slide
+    Route::post('hidden_status_slides/{id?}',
+        'Admin\SlideController@hiddenStatusSlides')->name('hidden_status_slides');
+    Route::post('show_status_slides/{id?}', 'Admin\SlideController@showStatusSlides')->name('show_status_slides');
+
+    //about us
+    Route::resource('/about_us', 'Admin\AboutUsController');
+    //hidden and show status of aboutus
+    Route::post('hidden_status_about_us/{id?}',
+        'Admin\AboutUsController@hiddenStatusAboutUs')->name('hidden_status_about_us');
+    Route::post('show_status_about_us/{id?}',
+        'Admin\AboutUsController@showStatusAboutUs')->name('show_status_about_us');
 });

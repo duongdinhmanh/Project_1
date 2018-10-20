@@ -17,7 +17,7 @@ class CreateAboutUsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->longText('content');
-            $table->string('image');
+//            $table->string('image');
             $table->integer('awards');
             $table->integer('happy_clients');
             $table->integer('winning_awards');
