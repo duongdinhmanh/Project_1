@@ -254,6 +254,7 @@ ul .bar_tabs {
   right: 30px;
 }
 
+<<<<<<< HEAD
 /*category*/
 
 h3 i {
@@ -327,5 +328,9 @@ a .mar_bot {
 .breadcrumb {
   padding-top: 15px;
   padding-right: 15px;
+}
+
+#ward {
+  display: block;
 }
 

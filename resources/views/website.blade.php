@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <!-- Google Tag Manager -->
-    {{-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PDTWJ3Z');</script> --}}
-    <!-- End Google Tag Manager -->
      <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Xero - Real Estate HTML Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +18,7 @@
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/css/jquery.mCustomScrollbar.css">
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/fonts/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="bower_components/demo-bower/assets/website/img/favicon.ico" type="image/x-icon" >
@@ -111,8 +105,8 @@
 <!-- External JS libraries -->
 <!-- Latest compiled and minified CSS & JS -->
 <script src="bower_components/demo-bower/assets/website/js/jquery-2.2.0.min.js"></script>
-<script src="bower_components/demo-bower/assets/website/js/popper.min.js"></script>
 <script src="bower_components/demo-bower/assets/website/js/bootstrap.min.js"></script>
+<script src="bower_components/demo-bower/assets/website/js/popper.min.js"></script>
 <script src="bower_components/demo-bower/assets/website/js/jquery.selectBox.js"></script>
 <script src="bower_components/demo-bower/assets/website/js/rangeslider.js"></script>
 <script src="bower_components/demo-bower/assets/website/js/jquery.magnific-popup.min.js"></script>
@@ -135,8 +129,6 @@
 <!-- Custom JS Script -->
 <script  src="bower_components/demo-bower/assets/website/js/app.js"></script>
 <script src="js/web.js"></script>
-
-
 </body>
 
 </html>

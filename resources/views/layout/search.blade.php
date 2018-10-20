@@ -2,7 +2,7 @@
     <div class="container">
         <div class="search-area-inner">
             <div class="search-contents ">
-                <form action="https://storage.googleapis.com/themevessel-xero/index.html" method="GET">
+                <form action="#" method="GET">
                     <div class="row">
                         <div class="col-6 col-lg-3 col-md-3">
                             <div class="form-group">
@@ -10,25 +10,13 @@
                             </div>
                         </div>
                         <div class="col-6 col-lg-3 col-md-3">
-                            <div class="form-group">
-                                {!! Form::select('districts', $districts, null, [ 'class' => 'selectpicker search-fields', 'id' => 'district' ]) !!}
-                                <select class="selectpicker search-fields" name="property-status">
-                                    <option>District</option>
-                                    <option>For Sale</option>
-                                    <option>For Rent</option>
-                                </select>
+                            <div class="form-group" >
+                                {!! htmlspecialchars_decode(Form::select('districts',$districts , null, [ 'class' => 'selectpicker search-fields', 'id' => 'district' ])) !!}
                             </div>
                         </div>
                         <div class="col-6 col-lg-3 col-md-3">
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="location">
-                                    <option>Ward</option>
-                                    <option>United Kingdom</option>
-                                    <option>American Samoa</option>
-                                    <option>Belgium</option>
-                                    <option>Canada</option>
-                                    <option>Delaware</option>
-                                </select>
+                                  {!! htmlspecialchars_decode(Form::select('ward',$ward , null, [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
                             </div>
                         </div>
                         <div class="col-6 col-lg-3 col-md-3">

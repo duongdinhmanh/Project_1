@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWardsTable extends Migration
+class CreateStreetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateWardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ward', function (Blueprint $table) {
+        Schema::create('street', function (Blueprint $table) {
             $table->increments('id');
             $table->string('prefix');
-            $table->string('province_id')->unsigned();
-            $table->string('district_id')->unsigned();
+            $table->integer('province_id')->unsigned();
+            $table->integer('district_id')->unsigned();
 
             $table->foreign('province_id')
                 ->references('id')->on('provinces')
@@ -38,6 +38,6 @@ class CreateWardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wards');
+        Schema::dropIfExists('street');
     }
 }

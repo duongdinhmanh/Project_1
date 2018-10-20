@@ -18,13 +18,15 @@ Route::group(['middleware' => 'locale'], function () {
         'uses' => 'Web\HomeController@getIndex',
     ]);
 
-    // Route::group(['prefix' => 'ajax'], function () {
-    //     Route::get('district,{provinceId}', 'AjaxController@getDistrict');
-    // });
+    Route::group(['prefix' => 'ajax'], function () {
+
+        Route::post('district/{id}', 'Web\AjaxController@getDistrict');
+        Route::post('ward/{districtid}', 'Web\AjaxController@getWard');
+    });
 });
 Route::get('/', [
     'as' => 'home',
-    'uses' => 'Web/HomeController@getIndex',
+    'uses' => 'Web\HomeController@getIndex',
 ]);
 
 //*************** Phan Admin *****************
@@ -54,11 +56,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminLogin', 'locale']], fu
 
     //category
     Route::resource('/categories', 'Admin\CategoryController')->except(['show']);
-    //hidden and show status of category
-    Route::post('hidden_status_categories/{id?}',
-        'Admin\CategoryController@hiddenStatusCategories')->name('hidden_status_categories');
-    Route::post('show_status_categories/{id?}',
-        'Admin\CategoryController@showStatusCategories')->name('show_status_categories');
+    Route::post(
+        'hidden_status_categories/{id?}',
+        'Admin\CategoryController@hiddenStatusCategories'
+    )->name('hidden_status_categories');
+    Route::post(
+        'show_status_categories/{id?}',
+        'Admin\CategoryController@showStatusCategories'
+    )->name('show_status_categories');
 
     //posts
     Route::resource('/posts', 'Admin\PostController');
@@ -75,15 +80,30 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminLogin', 'locale']], fu
     //slides
     Route::resource('/slides', 'Admin\SlideController');
     //hidden and show status of slide
-    Route::post('hidden_status_slides/{id?}',
-        'Admin\SlideController@hiddenStatusSlides')->name('hidden_status_slides');
+    Route::post(
+        'hidden_status_slides/{id?}',
+        'Admin\SlideController@hiddenStatusSlides'
+    )->name('hidden_status_slides');
     Route::post('show_status_slides/{id?}', 'Admin\SlideController@showStatusSlides')->name('show_status_slides');
 
     //about us
     Route::resource('/about_us', 'Admin\AboutUsController');
     //hidden and show status of aboutus
-    Route::post('hidden_status_about_us/{id?}',
-        'Admin\AboutUsController@hiddenStatusAboutUs')->name('hidden_status_about_us');
-    Route::post('show_status_about_us/{id?}',
-        'Admin\AboutUsController@showStatusAboutUs')->name('show_status_about_us');
+    Route::post(
+        'hidden_status_about_us/{id?}',
+        'Admin\AboutUsController@hiddenStatusAboutUs'
+    )->name('hidden_status_about_us');
+    Route::post(
+        'show_status_about_us/{id?}',
+        'Admin\AboutUsController@showStatusAboutUs'
+    )->name('show_status_about_us');
+
+    Route::post(
+        'hidden_status_categories/{id?}',
+        'Admin\CategoryController@hiddenStatusCategories'
+    )->name('hidden_status_categories');
+    Route::post(
+        'show_status_categories/{id?}',
+        'Admin\CategoryController@showStatusCategories'
+    )->name('show_status_categories');
 });
