@@ -351,8 +351,10 @@ tr {
         overflow: hidden;
         word-wrap: break-word;
     }
-    img {
-        width: 600px;
+    td{
+        .fix_size_img{
+            width: 100px;
+        }
     }
     //image - about us
     .fix_width {
@@ -360,12 +362,16 @@ tr {
     }
 }
 
-div .size_img {
-    height: 100%;
+a {
+    .mar_bot {
+        margin-bottom: 10px !important;
+    }
 }
 
-a .mar_bot {
-    margin-bottom: 10px !important;
+div {
+    .size_img {
+        height: 100%;
+    }
 }
 
 /*breadcrumbs*/

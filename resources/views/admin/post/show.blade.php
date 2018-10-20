@@ -61,7 +61,7 @@
                                         $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
                                     @endphp
                                     {{--<img src="{{ $url . config('common.image_upload') . $post->image }}">--}}
-                                    <img src="{{ $url . $post->image }}">
+                                    <img class="fix_size_img" src="{{ $url . $post->image }}">
                                 </td>
                             </tr>
                             <tr>
