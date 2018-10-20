@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->longText('content');
             $table->string('slug');
             $table->string('image');
-            $table->string('location');
+//            $table->string('location');
             $table->integer('status')->default(1);
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')

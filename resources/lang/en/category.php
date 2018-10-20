@@ -10,6 +10,11 @@ return [
     'update_category_success' => 'The category has been updated!',
     'delete_category_success' => 'The category :name has been deleted!',
     'update_status' => 'Update Succsessfully!',
+    'home' => 'Home',
+    'list_categories' => 'List Categories',
+    'create_category' => 'Create Category',
+    'edit_category' => 'Edit Category',
+    'show_category' => 'Show Category',
 
 //    create
     'title' => 'ADD - NEW - CATEGORY',

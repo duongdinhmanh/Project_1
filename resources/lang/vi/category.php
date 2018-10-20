@@ -10,6 +10,11 @@ return [
     'update_category_success' => 'Danh mục đã được cập nhật!',
     'delete_category_success' => 'Danh mục :name đã bị xóa!',
     'update_status' => 'Cập nhật thành công!',
+    'home' => 'Trang chủ',
+    'list_categories' => 'Danh sách danh mục',
+    'create_category' => 'Tạo danh mục',
+    'edit_category' => 'Sửa danh mục',
+    'show_category' => 'Chi tiết danh mục',
 //    create
     'title' => 'THÊM - MỚI - DANH MỤC',
     'title_create' => 'Tạo danh mục',
