@@ -121,7 +121,6 @@
 
     <script src="js/admin.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
-    {{--<script src="bower_components/demo-bower/assets/admin/js/ajax.js"></script>--}}
 </body>
 </html>
 

@@ -52,7 +52,6 @@
                             <th></th>
                             <th class="column-title display">{{ trans('post.col_title') }}</th>
                             <th class="column-title display">{{ trans('post.col_slug') }}</th>
-                            <th class="column-title display">{{ trans('post.col_desc') }}</th>
                             <th class="column-title display">{{ trans('post.col_cat') }}</th>
                             <th class="column-title display">{{ trans('post.col_created_at') }}</th>
                             <th class="column-title display">{{ trans('post.col_status') }}</th>
@@ -70,7 +69,6 @@
                                 <td class="a-center ">{{ $serial++ }}</td>
                                 <td class=" ">{{ $post->title }}</td>
                                 <td class=" ">{{ $post->slug }}</td>
-                                <td class=" ">{{ $post->desc }}</td>
                                 <td class=" ">{{ $post->category->name }}</td>
                                 <td class=" ">{{ $post->created_at }}</td>
                                 <td class="status">

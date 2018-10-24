@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateDistrictsTable extends Migration
 {
@@ -15,10 +15,14 @@ class CreateDistrictsTable extends Migration
     {
         Schema::create('districts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('district_id');
+            $table->integer('district_id')->unsigned();
             $table->string('name');
             $table->string('type');
             $table->string('location');
+            $table->foreign('province_id')
+                ->references('id')->on('provinces')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

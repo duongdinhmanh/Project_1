@@ -1,27 +1,30 @@
 <?php
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Districts extends Model
+class District extends Model
 {
     protected $table = 'districts';
 
     protected $fillable = [
-        'district_id',
         'name',
-        'type',
-        'location',
+        'prefix',
         'province_id',
     ];
 
-    public function district()
+    public function province()
     {
-        return $this->hasOne('App\Models\District', 'district_id', 'province_id');
+        return $this->hasOne('App\Models\Province');
     }
 
     public function ward()
     {
-        return $this->hasOne('App\Models\Ward', 'ward_id', 'district_id');
+        return $this->hasOne('App\Models\Ward');
+    }
+
+    public function street()
+    {
+        return $this->hasOne('App\Models\Street');
     }
 }

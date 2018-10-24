@@ -1,11 +1,12 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ward extends Model
+class Street extends Model
 {
-    protected $table = 'ward';
+    protected $table = 'street';
 
     protected $fillable = [
         'prefix',

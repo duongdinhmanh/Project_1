@@ -6,32 +6,10 @@
             <h3><i style="padding-right: 20px" class="fa fa-database"></i>{{ trans( 'config.add_new_apartments' ) }}
             </h3>
         </div>
-        <div class="title_right">
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-language"></i>
-                    <span id="current_lang" class="public-icon">
-                    </span>{{ trans( 'config.language' ) }}<span class="caret">
-                    </span>
-                </button>
-                <ul id="lang" class="dropdown-menu" style="z-index: 999999">
-                    <li>
-                        <a href="{!!  route( 'change_lang',[ 'vi' ] )  !!}">
-                            <img id="vi" src="assets/upload/config/vn.png" alt=""> Việt Nam
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{!!  route( 'change_lang',[ 'en' ] )  !!}">
-                            <img src="assets/upload/config/en.png" alt=""> English
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
     <div class="clearfix clearfix_top"></div>
     <div class="row">
-        {!!  Form::open( [ 'route' => 'apartments.store','file' => true, 'class'=>'form-horizontal form-label-left myForm','id'=>'myForm'  ] )  !!}
+        {!!  Form::open( [ 'method' => 'POST', 'route' => 'apartments.store','file' => true, 'class'=>'form-horizontal form-label-left myForm','id'=>'myForm'  ] )  !!}
         <div class="col-md-9 col-sm-9 col-xs-12">
             <div class="x_panel">
                 <div class="x_content">
@@ -176,34 +154,34 @@
                         {!!   htmlspecialchars_decode( Form::label( 'detail',trans( 'config.detail' ).' <span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ))  !!}
                         <div class="col-md-10 col-sm-10 col-xs-12">
                             {!! htmlspecialchars_decode(Form::textarea('detail' , '
-                                <table width = 100%; border = none>
+                                <table width = 100%; style = "border:none!important">
                                 <caption><h3>PROPERTY DETAILS</h3></caption>
                                 <tr>
                                 <td>
                                 <ul>
-                                <li><strong>Property Id:</strong>215</li>
-                                <li><strong>Price:</strong>$1240/ Month</li>
-                                <li><strong>Property Type:</strong>House</li>
-                                <li><strong>Bathrooms:</strong>3</li>
-                                <li><strong>Bathrooms:</strong>2</li>
+                                <li><strong> Property Id:</strong>215</li>
+                                <li><strong> Price:</strong>$1240/ Month</li>
+                                <li><strong> Property Type:</strong>House</li>
+                                <li><strong> Bathrooms:</strong>3</li>
+                                <li><strong> Bathrooms:</strong>2</li>
                                 </ul>
                                 </td>
                                 <td>
                                 <ul>
-                                <li><strong>Property Lot Size:</strong>800 ft2</li>
-                                <li><strong>Land area:</strong>230 ft2</li>
-                                <li><strong>Year Built:</strong>2018</li>
-                                <li><strong>Available From:</strong>2018</li>
-                                <li><strong>Garages:</strong>2</li>
+                                <li><strong> Property Lot Size:</strong>800 ft2</li>
+                                <li><strong> Land area:</strong>230 ft2</li>
+                                <li><strong> Year Built:</strong>2018</li>
+                                <li><strong> Available From:</strong>2018</li>
+                                <li><strong> Garages:</strong>2</li>
                                 </ul>
                                 </td>
                                 <td>
                                 <ul>
-                                <li><strong>Sold:</strong>Yes</li>
-                                <li><strong>City:</strong>Usa</li>
-                                <li><strong>Parking:</strong>Yes</li>
-                                <li><strong>Property Owner:</strong>Sohel Rana</li>
-                                <li><strong>Zip Code:&nbsp;</strong>2451</li>
+                                <li><strong> Sold:</strong>Yes</li>
+                                <li><strong> City:</strong>Usa</li>
+                                <li><strong> Parking:</strong>Yes</li>
+                                <li><strong> Property Owner:</strong>Sohel Rana</li>
+                                <li><strong> Zip Code:&nbsp;</strong>2451</li>
                                 </ul>
                                 </td>
                                 </tr>

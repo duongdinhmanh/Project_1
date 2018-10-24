@@ -6,28 +6,6 @@
             <h3><i style="padding-right: 20px" class="fa fa-database"></i>{{ trans( 'config.add_new_apartments' ) }}
             </h3>
         </div>
-        <div class="title_right">
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-language"></i>
-                    <span id="current_lang" class="public-icon">
-                    </span>{{ trans( 'config.language' ) }}<span class="caret">
-                    </span>
-                </button>
-                <ul id="lang" class="dropdown-menu" style="z-index: 999999">
-                    <li>
-                        <a href="{!!  route( 'change_lang',[ 'vi' ] )  !!}">
-                            <img id="vi" src="assets/upload/config/vn.png" alt=""> Việt Nam
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{!!  route( 'change_lang',[ 'en' ] )  !!}">
-                            <img src="assets/upload/config/en.png" alt=""> English
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
     <div class="clearfix clearfix_top"></div>
     <div class="row">

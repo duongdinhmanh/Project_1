@@ -1,12 +1,66 @@
 @extends('website')
 @section('home')
-<!-- Banner start -->
-@include('layout.banner')
-<!-- banner end -->
-
-<!-- Search area start -->
-@include('layout.search')
-<!-- Search area start -->
+<div class="sub-banner overview-bgi">
+    <div class="breadcrumb-area">
+        <div class="search-area">
+            <div class="container">
+                <div class="search-area-inner">
+                    <div class="search-contents ">
+                        {!!  Form::open([ 'method' => 'POST','action' => 'Web\HomeController@searchApartment'])  !!}
+                            <div class="row">
+                                <div class="col-6 col-lg-3 col-md-3">
+                                    <div class="form-group">
+                                        {!! Form::select('province', $province_search, $province, [ 'class' => 'selectpicker search-fields', 'id' => 'province' ]) !!}
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-md-3">
+                                    <div class="form-group" >
+                                        {!! htmlspecialchars_decode(Form::select('districts',$districts_search , $districts, [ 'class' => 'selectpicker search-fields', 'id' => 'district' ])) !!}
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-md-3">
+                                    <div class="form-group">
+                                        {!! htmlspecialchars_decode(Form::select('ward',$ward_search , $ward, [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-md-3">
+                                    <div class="form-group">
+                                        {!! htmlspecialchars_decode(Form::select('bedrooms',config('size.array_option_bedrooms') , $bedrooms, [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-lg-3 col-md-3">
+                                    <div class="form-group">
+                                        {!! htmlspecialchars_decode(Form::select('bathrooms',config('size.array_option_bathrooms') , $bathrooms , [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-md-3">
+                                    <div class="form-group">
+                                        {!! htmlspecialchars_decode(Form::select('apartment_acreage',$apartment_acreage_search, $apartment_acreage , [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                    </div>
+                                </div>
+                                 <div class="col-6 col-lg-3 col-md-3">
+                                    <div class="form-group">
+                                        <div class="range-slider">
+                                            <div data-min="{{ $min_price }}" data-max="{{ $max_price }}" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3 col-md-3">
+                                    <div class="form-group">
+                                        <button class="search-button btn-md btn-color" type="submit">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        {!!  Form::close()  !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="featured-properties content-area-2">
     <div class="container">
         <div class="main-title">
@@ -20,7 +74,7 @@
         </ul>
         <div class="row filter-portfolio">
             <div class="cars">
-               @foreach ($allApartment as $item)
+                @foreach ($search as $item)
                     <div class="col-lg-4 col-md-6 col-sm-12 filtr-item" data-category="3">
                         <div class="property-box">
                             <div class="property-thumbnail">
@@ -41,7 +95,7 @@
                                     <img src="{{ $item->image }}" alt="property-7" class="img-fluid">
                                 </a>
                                 <div class="property-overlay">
-                                    <a href="{{ route('apartment-detail',$item->slug) }}" class="overlay-link">
+                                    <a href="{{ route('apartment-detail') }}" class="overlay-link">
                                         <i class="fa fa-link"></i>
                                     </a>
                                     <a class="overlay-link property-video" title="Test Title">
@@ -95,35 +149,5 @@
         </div>
     </div>
 </div>
-
-<!-- services start -->
-@include('layout.services')
-<!-- services end -->
-
-<!-- Recent Properties start -->
-@include('layout.recentProperties')
-<!-- Recent Properties end -->
-
-<!-- Most Popular Places start -->
-@include('layout.popularPlaces')
-<!--Most Popular Placesstart end -->
-
-<!-- Status -->
-@include('layout.status')
-<!-- Status end -->
-
-
-<!-- Friendly Customer start -->
-@include('layout.friendlyCustomer ')
-<!-- Friendly Customer end -->
-
-<!-- Post  start -->
-@include('layout.post')
-<!-- Post  start -->
-
-<!-- partner start -->
-@include('layout.partner')
-<!-- partner end -->
-
 
 @endsection

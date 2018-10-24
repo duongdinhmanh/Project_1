@@ -5,28 +5,7 @@
         <div class="title_left">
             <h3>Products <small>List</small></h3>
         </div>
-        <div class="title_right">
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-language"></i>
-                    <span id="current_lang" class="public-icon">
-                    </span>{{ trans('config.language') }}<span class="caret">
-                    </span>
-                </button>
-                <ul id="lang" class="dropdown-menu" style="z-index: 999999">
-                    <li><a href="{!! route('change_lang',['vi']) !!}">
-                        <img id="vi"  src="assets/upload/config/vn.png" alt=""> Việt Nam
-                    </a>
-                </li>
-                <li><a href="{!! route('change_lang',['en']) !!}">
-                    <img src="assets/upload/config/en.png" alt="">
-                    English
-                </a>
-            </li>
-        </ul>
     </div>
-</div>
-</div>
 <div class="clearfix"></div>
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
