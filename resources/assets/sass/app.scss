@@ -339,8 +339,12 @@ input .position {
     background: #edfffd !important;
 }
 
-a i .padding {
-    padding: 3px;
+a{
+    i{
+        .padding {
+            padding: 3px;
+        }
+    }
 }
 
 tr {
@@ -353,6 +357,8 @@ tr {
         .fix_size_img{
             width: 100px;
         }
+    }
+}
 
 .breadcrumb {
     padding-top: 15px;
@@ -376,10 +382,10 @@ tr {
 }
 .fb_iframe_widget{
     span {
-         iframe[style] {
+        iframe[style] {
             min-width: 100% !important;
             width: 100% !important;
-         }
+        }
     }
 }
 a {

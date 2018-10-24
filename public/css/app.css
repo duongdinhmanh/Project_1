@@ -296,7 +296,15 @@ a i .padding {
   padding: 3px;
 }
 
-/*breadcrumbs*/
+tr .show content {
+  max-width: 550px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+tr td .fix_size_img {
+  width: 100px;
+}
 
 .breadcrumb {
   padding-top: 15px;
@@ -322,7 +330,15 @@ a i .padding {
   width: 100% !important;
 }
 
-.order-button {
+a .mar_bot {
+  margin-bottom: 10px !important;
+}
+
+div .size_img {
+  height: 100%;
+}
+
+div .size_img .order-button {
   cursor: pointer;
   padding: 13px 20px;
   letter-spacing: 1px;
