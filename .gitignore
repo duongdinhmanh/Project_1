@@ -11,4 +11,4 @@ yarn-error.log
 .env
 .phpunit.result.cache
 node_modules
-/public/
+/public

@@ -13,12 +13,11 @@ class AjaxController extends Controller
     {
         $district = District::where('province_id', $id)->get();
 
-        // $output = ' ';
-        // foreach ($district as $row) {
-        //     $output .= '<option value="' . $row->id . '">' . $row->name . '</option>';
-        // }
-
-        return reponse()->json($district);
+        $output = ' ';
+        foreach ($district as $row) {
+            $output .= '<option value="' . $row->id . '">' . $row->name . '</option>';
+        }
+        return $output;
     }
 
     public function getWard(Request $request, $districtid)

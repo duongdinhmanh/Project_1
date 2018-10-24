@@ -11,17 +11,11 @@ $(document).ready(function() {
                 type: 'Post',
                 url: "ajax/district/"+id,
                 data:{'id': id},
-                dataType: "JSON",
                 success: function(data){
-                   if(data == district) {
-                         var html ='';
-                        for (var i in data) {
-                            html +="<option value=\""+i.id+"\">"+i.name+"</option>";
-                        }
-                        $('#district').html(html);
-                        $('#district').css({ "display":"block", "padding-left":"20px" });
-                        $('#district').next('.selectBox').css("display", "none");
-                       }
+                    $('#district').html(data);
+                    $('#district').css({ "display":"block", "padding-left":"20px" });
+                    $('#district').next('.selectBox').css("display", "none");
+
                 }
             })
      })
@@ -37,7 +31,6 @@ $(document).ready(function() {
                 type: 'Post',
                 url: "ajax/ward/"+districtid,
                 data:{'districtid':districtid},
-                dataType: "JSON",
                 success: function(data){
                     $('#ward').html(data);
                     $('#ward').css({ "display":"block", "padding-left":"20px" });

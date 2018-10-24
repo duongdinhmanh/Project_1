@@ -13,9 +13,51 @@
 //*************** Phan frontend *****************
 
 Route::group(['middleware' => 'locale'], function () {
-    Route::get('/', [
-        'as' => 'home',
-        'uses' => 'Web\HomeController@getIndex',
+
+    Route::get('/', 'Web\HomeController@getIndex')->name('home');
+
+    Route::post('search', [
+        'as' => 'search-apartment',
+        'uses' => 'Web\HomeController@searchApartment',
+    ]);
+    Route::get('apartment-detail/{slug}', [
+        'as' => 'apartment-detail',
+        'uses' => 'Web\HomeController@apartmentDetail',
+    ]);
+
+    Route::get('dang-ky', [
+        'as' => 'dang-ky',
+        'uses' => 'Web\HomeController@register',
+    ]);
+
+    Route::post('dang-ky', [
+        'as' => 'post-dang-ky',
+        'uses' => 'Web\HomeController@registerLogin',
+    ]);
+
+    Route::post('dang-nhap', [
+        'as' => 'dang-nhap',
+        'uses' => 'Web\HomeController@logincustomers',
+    ]);
+
+    Route::get('log-Out', [
+        'as' => 'log-Out',
+        'uses' => 'Web\HomeController@logOutCustomer',
+    ]);
+
+    Route::get('dat-lich/{id}', [
+        'as' => 'dat-lich',
+        'uses' => 'Web\HomeController@set_calendars_view',
+    ]);
+
+    Route::post('dat-lich', [
+        'as' => 'dat-lich-post',
+        'uses' => 'Web\HomeController@set_calendars',
+    ]);
+
+    Route::get('thong-bao', [
+        'as' => 'thong-bao',
+        'uses' => 'Web\HomeController@message',
     ]);
 
     Route::group(['prefix' => 'ajax'], function () {
@@ -24,10 +66,6 @@ Route::group(['middleware' => 'locale'], function () {
         Route::post('ward/{districtid}', 'Web\AjaxController@getWard');
     });
 });
-Route::get('/', [
-    'as' => 'home',
-    'uses' => 'Web\HomeController@getIndex',
-]);
 
 //*************** Phan Admin *****************
 
@@ -106,4 +144,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['adminLogin', 'locale']], fu
         'show_status_categories/{id?}',
         'Admin\CategoryController@showStatusCategories'
     )->name('show_status_categories');
+
+    Route::resource('set_calendars', 'Admin\SetCalendarController');
+    //hidden and show status of set-calendar
+    Route::post('hidden_status_set_calendars/{id}', 'Admin\SetCalendarController@hiddenSetCalendar')->name('hidden_status_set_calendars');
+    Route::post('show_status_set_calendars/{id}', 'Admin\SetCalendarController@showSetCalendar')->name('show_status_set_calendars');
 });

@@ -135,14 +135,9 @@ class ApartmentController extends Controller
         $apartmentUpdate = $this->apartmentRepository->find($id);
         $check_post = serialize($request->post_id);
         $request->merge(['post_id' => $check_post]);
-        $array = [];
         if ($request->img_detail) {
-            $imgDetail = $request->img_detail;
-            foreach ($imgDetail as $imgItem) {
-                $file = getImage($imgItem, 'product_detail');
-                $array[] = $file;
-            }
-            $request->merge(['img_detail' => serialize($array)]);
+            $file = serialize($request->img_detail);
+            $request->merge(['img_detail' => $file]);
         }
         $detail_apartment = $this->apartmentRepository->update($apartmentUpdate->id, $request->all());
 

@@ -35,6 +35,7 @@ class loginController extends Controller
             'email' => $request->email,
             'password' => $request->password,
             'status' => 1,
+            'role' => 1,
         );
         if (Auth::attempt($login)) {
             Session::put('website_language', config('app.locale'));

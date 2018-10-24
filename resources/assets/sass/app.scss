@@ -298,7 +298,7 @@ ul {
 .del_item {
     float: right;
     position: relative;
-    right: 30px;
+    right: 5px;
 }
 
 h3 i {
@@ -343,7 +343,6 @@ a i .padding {
     padding: 3px;
 }
 
-/*post*/
 tr {
     .show content {
         max-width: 550px;
@@ -354,13 +353,35 @@ tr {
         .fix_size_img{
             width: 100px;
         }
-    }
-    //image - about us
-    .fix_width {
-        width: 30%;
-    }
+
+.breadcrumb {
+    padding-top: 15px;
+    padding-right: 15px;
 }
 
+#ward {
+    display: block;
+}
+
+// like , face book
+.fb_iframe_widget {
+    min-width: 100% !important;
+    width: 100% !important;
+}
+.fb_iframe_widget{
+    span {
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+}
+.fb_iframe_widget{
+    span {
+         iframe[style] {
+            min-width: 100% !important;
+            width: 100% !important;
+         }
+    }
+}
 a {
     .mar_bot {
         margin-bottom: 10px !important;
@@ -370,15 +391,46 @@ a {
 div {
     .size_img {
         height: 100%;
+        .order-button {
+            cursor: pointer;
+            padding: 13px 20px;
+            letter-spacing: 1px;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #FFF;
+            transition: .5s;
+            border-radius: 2px;
+            border: none;
+            width: 100%;
+        }
+    }
+}
+#register {
+    label {
+        color : #fff;
     }
 }
 
-/*breadcrumbs*/
-.breadcrumb {
-    padding-top: 15px;
-    padding-right: 15px;
+#register-form {
+    border: 1px solid #fff;
+    padding: 50px;
 }
 
-#ward {
-    display: block;
+#customer {
+    li {
+        width: 140px!important;
+    }
+}
+#apartment_list_set_calendar_detail {
+    img {
+        width: 100px;
+        height: auto;
+        overflow: hidden;
+    }
+    tr {
+        td {
+            vertical-align: middle!important;
+        }
+    }
 }

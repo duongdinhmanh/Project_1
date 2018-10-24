@@ -27,7 +27,9 @@ function open_popup(url){
   var t = Math.floor((screen.height-h)/2);
   var win = window.open( url, 'ResponsiveFilemanager', "scrollbars=1,width=" + w + ",height=" + h + ",top=" + t + ",left=" + l );
 }
+
 $(document).ready(function() {
+
     $('div.alert').delay(2000).slideUp();
 
     window.lastURL = $('#fieldID').val();
@@ -162,11 +164,10 @@ $(document).ready(function() {
         }
     });
 
-
-
-
   });
-// Phần config
+
+// facebook - comment
+    document.getElementsByClassName("fb-comments")[0].setAttribute("data-href", window.location.href);
 
 
 

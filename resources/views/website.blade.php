@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Xero - Real Estate HTML Template</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="fb:app_id" content="141283446583239"/>
+    <meta property="fb:admins" content="100015475292155"/>
+    <title>Homestate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <base href="{{asset('')}}">
     <!-- External CSS libraries -->
+
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/css/magnific-popup.css">
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/css/jquery.selectBox.css">
@@ -18,6 +21,7 @@
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/css/jquery.mCustomScrollbar.css">
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/fonts/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/fonts/flaticon/font/flaticon.css">
+     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
 
     <!-- Favicon icon -->
@@ -28,13 +32,22 @@
 
     <!-- Custom Stylesheet -->
     <link type="text/css" rel="stylesheet" href="bower_components/demo-bower/assets/website/css/style.css">
-    <link rel="stylesheet" type="text/css"  href="bower_components/demo-bower/assets/css/skins/default.css">
+    <link rel="stylesheet" type="text/css"  href="bower_components/demo-bower/assets/website/css/skins/default.css">
 
 </head>
-<body id="top">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.1&appId=141283446583239&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDTWJ3Z"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDTWJ3Z" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="page_loader"></div>
 
@@ -42,46 +55,13 @@
 @include('header')
 <!-- main header end -->
 
-<!-- Banner start -->
-@include('layout.banner')
-<!-- banner end -->
+<!------------ Home ---------->
+@yield('home')
+<!-------- end Home -------->
 
-<!-- Search area start -->
-@include('layout.search')
-<!-- Search area start -->
-
-<!-- List Products start -->
-@include('layout.listProducts')
-<!-- List Products end -->
-
-<!-- services start -->
-@include('layout.services')
-<!-- services end -->
-
-<!-- Recent Properties start -->
-@include('layout.recentProperties')
-<!-- Recent Properties end -->
-
-<!-- Most Popular Places start -->
-@include('layout.popularPlaces')
-<!--Most Popular Placesstart end -->
-
-<!-- Status -->
-@include('layout.status')
-<!-- Status end -->
-
-
-<!-- Friendly Customer start -->
-@include('layout.friendlyCustomer ')
-<!-- Friendly Customer end -->
-
-<!-- Post  start -->
-@include('layout.post')
-<!-- Post  start -->
-
-<!-- partner start -->
-@include('layout.partner')
-<!-- partner end -->
+<!-- modal_loginstart -->
+@include('layout.modal_login')
+<!-- modal_login end -->
 
 <!-- Footer start -->
 @include('footer')
@@ -104,9 +84,10 @@
 
 <!-- External JS libraries -->
 <!-- Latest compiled and minified CSS & JS -->
+
 <script src="bower_components/demo-bower/assets/website/js/jquery-2.2.0.min.js"></script>
-<script src="bower_components/demo-bower/assets/website/js/bootstrap.min.js"></script>
 <script src="bower_components/demo-bower/assets/website/js/popper.min.js"></script>
+<script src="bower_components/demo-bower/assets/website/js/bootstrap.min.js"></script>
 <script src="bower_components/demo-bower/assets/website/js/jquery.selectBox.js"></script>
 <script src="bower_components/demo-bower/assets/website/js/rangeslider.js"></script>
 <script src="bower_components/demo-bower/assets/website/js/jquery.magnific-popup.min.js"></script>
@@ -126,9 +107,16 @@
 <script src="bower_components/demo-bower/assets/website/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0N5pbJN10Y1oYFRd0MJ_v2g8W2QT74JE"></script>
 <script src="bower_components/demo-bower/assets/website/js/ie-emulation-modes-warning.js"></script>
-<!-- Custom JS Script -->
+<script src="bower_components/demo-bower/assets/website/js/jquery-ui.min.js"></script>
 <script  src="bower_components/demo-bower/assets/website/js/app.js"></script>
 <script src="js/web.js"></script>
+<script>
+    $(document).ready(function() {
+        $(function() {
+            $( "#datepicker-1" ).datepicker();
+        });
+    });
+</script>
 </body>
 
 </html>

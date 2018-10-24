@@ -1,7 +1,7 @@
 <header class="main-header sticky-header" id="main-header-2">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light rounded">
                     <a class="navbar-brand logo navbar-brand d-flex w-50 mr-auto" href="">
                         <img src="assets/upload/logos/logo.png" alt="logo">
@@ -201,12 +201,30 @@
                                 </div>
                             </li>
                         </ul>
-                        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                        <ul class="nav navbar-nav ml-auto w-100 justify-content-end" id="customer">
                             <li class="nav-item">
-                                <a class="open-offcanvas" href="#">
+                                <a class="open-offcanvas" href="#" style="padding-top: 30px">
                                     <span>Menu</span>
                                     <span class="fa fa-bars"></span>
                                 </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                @if (Auth::check())
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Xin Chào :  {{ Auth::user()->email }}
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                        <a class="dropdown-item" href="{{ route('log-Out') }}">Thoát</a>
+                                    </div>
+                                @else
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Đăng Nhập
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                        <a class="dropdown-item" href="contact-1.html">Đăng Ký</a>
+                                        <a class="dropdown-item" data-toggle="modal" href='#modal-login' data-toggle="modal">Đăng Nhập</a>
+                                    </div>
+                                @endif
                             </li>
                         </ul>
                     </div>

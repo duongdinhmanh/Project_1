@@ -43,6 +43,11 @@
                         <li><a href="{{ route('apartments.create') }}">Create New Apartments</a></li>
                     </ul>
                 </li>
+                <li><a> <i class="fa fa-envelope"></i></i> Set-Calendar <button type="button" style="color: #ED1B1B ;font-size: 10px;border: 1px solid #dcdcdc;border-radius: 25px;">{{ $order }}</button><span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{{ route('set_calendars.index') }}">List of Set-Calendar</a></li>
+                    </ul>
+                </li>
                 <li><a><i class="fa fa-sitemap ion"></i>Category <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="{{ route('categories.index') }}">List of Categories</a></li>
