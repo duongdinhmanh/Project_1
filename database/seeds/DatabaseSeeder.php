@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run() {
 		$this->call(categorySeeder::class);
+		$this->call(PermissionTableSeeder::class);
 	}
 
 }

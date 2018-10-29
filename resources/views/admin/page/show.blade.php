@@ -24,10 +24,12 @@
                 <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-round btn-primary">
                     <i class="glyphicon glyphicon-edit"></i>{{ trans('page.edit') }}
                 </a>
+                @role('admin')
                 {{--Delete--}}
                 {!! Form::open(['method' => 'DELETE', 'class' =>' display_form', 'route' => ['pages.destroy', 'id' => $page->id]]) !!}
                 {!! Form::button('<i class="glyphicon glyphicon-trash"></i>' . trans('page.delete'), ['onclick' => "return del_pro('You really want to delete this about us')",'title' => 'Delete Page', 'class' => 'btn btn-round btn-danger', 'type' => 'submit']) !!}
                 {!! Form::close() !!}
+                @role('admin')
             </div>
         </div>
         <div class="clearfix"></div>

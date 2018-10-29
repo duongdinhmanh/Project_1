@@ -24,10 +24,12 @@
                 <a href="{{ route('slides.edit', $slide->id) }}" class="btn btn-round btn-primary">
                     <i class="glyphicon glyphicon-edit"></i>{{ trans('slide.edit') }}
                 </a>
+                @role('admin')
                 {{--Delete--}}
                 {!! Form::open(['method' => 'DELETE', 'class'=>'display_form', 'route' => ['slides.destroy', 'id' => $slide->id]]) !!}
                 {!! Form::button('<i class="glyphicon glyphicon-trash"></i>' . trans('slide.delete'), ['onclick'=>"return del_pro('You really want to delete this about us')",'title' => 'Delete Page', 'class' => 'btn btn-round btn-danger', 'type' => 'submit']) !!}
                 {!! Form::close() !!}
+                @endrole
             </div>
         </div>
         <div class="clearfix"></div>

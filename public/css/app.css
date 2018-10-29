@@ -165,7 +165,7 @@ ul .bar_tabs {
 }
 
 #logo_admin img {
-  max-width: 80;
+  max-width: 80%;
   height: auto;
   overflow: hidden;
 }
@@ -311,6 +311,7 @@ tr td .fix_size_img {
   padding-right: 15px;
 }
 
+
 #ward {
   display: block;
 }
@@ -353,6 +354,9 @@ div .size_img .order-button {
   width: 100%;
 }
 
+/*breadcrumbs*/
+
+
 #register label {
   color: #fff;
 }
@@ -374,5 +378,9 @@ div .size_img .order-button {
 
 #apartment_list_set_calendar_detail tr td {
   vertical-align: middle !important;
+}
+
+.width_profile {
+  width: 100%;
 }
 

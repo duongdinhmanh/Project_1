@@ -99,10 +99,12 @@
                                             <i class="fa fa-eye padding"></i>
                                         </a>
                                     @endif
+                                    @role('admin')
                                     {{--delete about--}}
                                     {!! Form::open(['method' => 'DELETE', 'class' => 'display_form', 'route' => ['slides.destroy', 'id' => $slide->id]]) !!}
                                     {!! Form::button('<i class="fa fa-trash"></i>', ['onclick'=>"return del_pro('You really want to delete this slide')",'title' => 'Delete Slide', 'class' => 'btn btn-xs btn-danger', 'type' => 'submit']) !!}
                                     {!! Form::close() !!}
+                                    @endrole
                                 </td>
                             </tr>
                         @endforeach
