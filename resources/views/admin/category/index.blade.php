@@ -58,7 +58,7 @@
                         </tr>
                         </thead>
                         <tbody id="cat_list">
-                        @foreach ($categories as $cat)
+                        @foreach ($categories as $cat_parent)
                             <tr class="even pointer bg_color">
                                 <td class="a-center ">
                                     <div class="icheckbox_flat-green hover active position">
@@ -66,43 +66,122 @@
                                     </div>
                                 </td>
                                 <td class="a-center ">{{ ++$serial }}</td>
-                                <td class=" "><b>==|| {{ $cat->name }}</b></td>
-                                <td class=" ">{{ $cat->slug }}</td>
-                                <td class=" ">{{ $cat->created_at }}</td>
+                                <td class=" "><b>==|| {{ $cat_parent->name }}</b></td>
+                                <td class=" ">{{ $cat_parent->slug }}</td>
+                                <td class=" ">{{ $cat_parent->created_at }}</td>
                                 <td class="status">
-                                    @if ($cat->status == 1)
-                                        <button
-                                            class="btn btn-xs btn-success">{{ trans('category.label_status_enable') }}</button>
+                                    @if ($cat_parent->status == 1)
+                                        <i class="fa fa-check-circle active"></i>
                                     @else
-                                        <button
-                                            class="btn btn-xs btn-warning">{{ trans('category.label_status_disable') }}</button>
+                                        <i class="fa fa-check-circle"></i>
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('categories.edit',$cat->id) }}" class="btn btn-xs btn-primary"
+                                    <a href="{{ route('categories.edit',$cat_parent->id) }}" class="btn btn-xs btn-primary"
                                        title="Edit item category">
                                         <i class="glyphicon glyphicon-edit"></i>{{ trans('category.edit') }}
                                     </a>
-                                    @if ($cat->status == 1)
-                                        <a href_page="{!! route('hidden_status_categories',$cat->id) !!}"
-                                           id="{{ $cat->id }}" class="btn btn-xs btn-warning hidden_item"
-                                           title="Disable item category">
+                                    @if ($cat_parent->status == 1)
+                                        <a href_page="{!! route('hidden_status_categories',$cat_parent->id) !!}" id="{{ $cat_parent->id }}" class="btn btn-xs btn-warning hidden_item" title="Disable item category">
                                             <i class="fa fa-eye-slash padding"></i>
                                         </a>
                                     @else
-                                        <a href_page="{!! route('show_status_categories',$cat->id) !!}"
-                                           id="{{ $cat->id }}"
+                                        <a href_page="{!! route('show_status_categories',$cat_parent->id) !!}"
+                                           id="{{ $cat_parent->id }}"
                                            class="btn btn-xs btn-success show_item" title="Enable item category">
                                             <i class="fa fa-eye padding"></i>
                                         </a>
                                     @endif
                                 </td>
                             </tr>
-                            {{--index category childs--}}
-                            @if(count($cat -> childs))
-                                @include('admin.category.index_category_child',['childs' => $cat->childs])
-                            @endif
+                            @foreach ($cat_parent->childs as $child)
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                        <div class="icheckbox_flat-green hover active position">
+                                            {!! Form::checkbox('table_records',null,false,['class'=>'flat position']) !!}
+                                        </div>
+                                    </td>
+                                    <td class="a-center ">{{ $serial.'.'.++$serial_child }}</td>
+                                    <td class=" ">==|| ==|| {{ $child->name}}</td>
+                                    <td class=" ">{{ $child->slug }}</td>
+                                    <td class=" ">{{ $child->created_at }}</td>
+                                    <td class="status">
+                                        @if ($child->status == 1)
+                                            <i class="fa fa-check-circle active"></i>
+                                        @else
+                                          <i class="fa fa-check-circle"></i>
+                                        @endif
+                                    </td>
+                                    <td class="">
+                                        <a href="{{ route('categories.edit',$child->id) }}" class="btn btn-xs btn-primary"
+                                           title="Edit item category">
+                                            <i class="glyphicon glyphicon-edit"></i>{{ trans('category.edit') }}
+                                        </a>
+                                        @if ($child->status == 1)
+                                            <a href_page="{!! route('hidden_status_categories',$child->id) !!}" id="{{ $child->id }}"
+                                               class="btn btn-xs btn-warning hidden_item" title="Disable item category">
+                                                <i class="fa fa-eye-slash padding"></i>
+                                            </a>
+                                        @else
+                                            <a href_page="{!! route('show_status_categories',$child->id) !!}" id="{{ $child->id }}"
+                                               class="btn btn-xs btn-success show_item" title="Enable item category">
+                                                <i class="fa fa-eye padding"></i>
+                                            </a>
+                                        @endif
+                                        {{--delete category_child--}}
+                                        {!! Form::open(['method' => 'DELETE', 'class'=>'display_form', 'action' => ['Admin\CategoryController@destroy', 'id' => $child->id]]) !!}
+                                        {!! Form::button('<i class="fa fa-trash""></i>', ['onclick'=>"return del_pro('You really want to delete this category')",'title'=> 'Delete category', 'class' => 'btn btn-xs btn-danger', 'type' => 'submit']) !!}
+                                        {!! Form::close() !!}
+                                    </td>
+                                </tr>
+                                @foreach ($child->childs as $child2)
+                                <tr class="even pointer">
+                                    <td class="a-center ">
+                                        <div class="icheckbox_flat-green hover active position">
+                                            {!! Form::checkbox('table_records',null,false,['class'=>'flat position']) !!}
+                                        </div>
+                                    </td>
+                                    <td class="a-center ">{{ $serial.'.'.++$serial_child }}</td>
+                                    <td class=" ">==|| ==||==|| {{ $child2->name}}</td>
+                                    <td class=" ">{{ $child2->slug }}</td>
+                                    <td class=" ">{{ $child2->created_at }}</td>
+                                    <td class="status">
+                                        @if ($child2->status == 1)
+                                            <i class="fa fa-check-circle active"></i>
+                                        @else
+                                           <i class="fa fa-check-circle"></i>
+                                        @endif
+                                    </td>
+                                    <td class="">
+                                        <a href="{{ route('categories.edit',$child2->id) }}" class="btn btn-xs btn-primary"
+                                           title="Edit item category">
+                                            <i class="glyphicon glyphicon-edit"></i>{{ trans('category.edit') }}
+                                        </a>
+                                        @if ($child2->status == 1)
+                                            <a href_page="{!! route('hidden_status_categories',$child2->id) !!}" id="{{ $child2->id }}"
+                                               class="btn btn-xs btn-warning hidden_item" title="Disable item category">
+                                                <i class="fa fa-eye-slash padding"></i>
+                                            </a>
+                                        @else
+                                            <a href_page="{!! route('show_status_categories',$child2->id) !!}" id="{{ $child2->id }}"
+                                               class="btn btn-xs btn-success show_item" title="Enable item category">
+                                                <i class="fa fa-eye padding"></i>
+                                            </a>
+                                        @endif
+                                        {{--delete category_child--}}
+                                        {!! Form::open(['method' => 'DELETE', 'class'=>'display_form', 'action' => ['Admin\CategoryController@destroy', 'id' => $child2->id]]) !!}
+                                        {!! Form::button('<i class="fa fa-trash""></i>', ['onclick'=>"return del_pro('You really want to delete this category')",'title'=> 'Delete category', 'class' => 'btn btn-xs btn-danger', 'type' => 'submit']) !!}
+                                        {!! Form::close() !!}
+                                    </td>
+                                </tr>
+                            @endforeach
+                            @endforeach
                         @endforeach
+                        <tr>
+                            <td colspan="7" rowspan="" headers="" style="text-align: right">
+                                {!! $categories->links() !!}
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>

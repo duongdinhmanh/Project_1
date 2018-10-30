@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use App\Models\SetCalendar;
 use App\Repositories\EloquentRepository;
 use App\Repositories\EloquentRepository\ApartmentImageRepository;
@@ -29,6 +30,14 @@ class AppServiceProvider extends ServiceProvider
             $order = SetCalendar::where('status', 0)->count();
             $view->with('order', $order);
         });
+        view()->composer('*', function ($view) {
+            $cat_parent = Category::where('parent_id', 0)->get();
+            $view->with('cat_parent', $cat_parent);
+        });
+        // view()->composer('*', function ($view) {
+        //     $cat_parent = Post::where('status', 1)->where('')->get();
+        //     $view->with('cat_parent', $cat_parent);
+        // });
     }
 
     /**

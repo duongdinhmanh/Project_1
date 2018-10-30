@@ -43,13 +43,13 @@
                             <i class="fa fa-plus-circle"></i>{{ trans('post.btn_create') }}
                         </a>
                     </div>
-                    <table class="table table-striped jambo_table bulk_action">
+                    <table class="table table-striped jambo_table bulk_action" id="table-post">
                         <thead>
                         <tr class="headings">
                             <th>
                                 {!! Form::checkbox('table_records_all',null,false,['id' => 'check-all', 'class'=>'flat']) !!}
                             </th>
-                            <th></th>
+                            <th class="column-title display">{{ trans('post.label_img') }}</th>
                             <th class="column-title display">{{ trans('post.col_title') }}</th>
                             <th class="column-title display">{{ trans('post.col_slug') }}</th>
                             <th class="column-title display">{{ trans('post.col_cat') }}</th>
@@ -66,7 +66,9 @@
                                         {!! Form::checkbox('table_records',null,false,['class' => 'flat position']) !!}
                                     </div>
                                 </td>
-                                <td class="a-center ">{{ $serial++ }}</td>
+                                <td class=" ">
+                                    <img src="{{ $post->image }}" alt="" class="img-post">
+                                </td>
                                 <td class=" ">{{ $post->title }}</td>
                                 <td class=" ">{{ $post->slug }}</td>
                                 <td class=" ">{{ $post->category->name }}</td>

@@ -18,6 +18,7 @@ class CreateApartmentsTable extends Migration
             $table->string('post_id');
             $table->string('name');
             $table->string('slug');
+            $table->string('brand');
             $table->text('desc');
             $table->string('img_detail');
             $table->text('desc');
@@ -32,8 +33,8 @@ class CreateApartmentsTable extends Migration
             $table->text('detail');
             $table->string('floor_plans');
             $table->string('map');
+            $table->tinyInteger('featured_product')->default(0);
             $table->tinyInteger('status')->default(1);
-
             $table->timestamps();
         });
     }

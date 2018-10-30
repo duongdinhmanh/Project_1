@@ -45,11 +45,9 @@
                 </li>
                 <li><a> <i class="fa fa-envelope"></i></i> Set-Calendar <button type="button" style="color: #ED1B1B ;font-size: 10px;border: 1px solid #dcdcdc;border-radius: 25px;">{{ $order }}</button><span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="{{ route('set_calendars.index') }}">List of Set-Calendar</a></li>
+                        {{-- <li><a href="{{ route('set_calendars.index') }}">List of Set-Calendar</a></li> --}}
                     </ul>
                 </li>
-                <li><a><i class="fa fa-sitemap ion"></i>Category <span class="fa fa-chevron-down"></span></a>
-
                 <li><a><i class="fa fa-sitemap ion"></i> Category <span class="fa fa-chevron-down"></span></a>
 
                     <ul class="nav child_menu">
@@ -83,7 +81,7 @@
                 </li>
             </ul>
         </div>
-        @role('admin')
+      {{--   @role('admin')
         <div class="menu_section">
             <h3>Phân quyền</h3>
             <ul class="nav side-menu">
@@ -102,18 +100,18 @@
                 </li>
             </ul>
         </div>
-        @endrole
+        @endrole --}}
 
         <div class="menu_section">
             <h3>Managa User</h3>
             <ul class="nav side-menu">
                 <li><a><i class="fa fa-bug"></i> User <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="{{ route('users.index') }}">List of User</a></li>
+                        <li><a href="">List of User</a></li>
 
-                        @role('admin')
+                     {{--    @role('admin')
                         <li><a href="{{ route('users.create') }}">Create New User</a></li>
-                        @endrole
+                        @endrole --}}
                     </ul>
                 </li>
             </ul>

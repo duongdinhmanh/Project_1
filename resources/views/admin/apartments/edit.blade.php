@@ -32,13 +32,28 @@
                         </div>
                     </div>
                     <div class="item form-group">
+                        {!!   htmlspecialchars_decode( Form::label( 'brand', trans( 'apartment.brand' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
+                        <div class="col-md-10 col-sm-10 col-xs-12">
+                            {!!  Form::text( 'brand',old('brand',isset($apartmentEdit) ? $apartmentEdit->brand : null),[ 'placeholder' => trans( 'apartment.brand' ),'class' =>'form-control col-md-7 col-xs-12', 'required'=>''  ] )  !!}
+                            <p>
+                                <small>* {{ trans( 'apartment.brand' ) }}</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item form-group">
                         {!!   htmlspecialchars_decode( Form::label( 'list-category', trans( 'config.category_name' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
                         <div class="col-md-10 col-sm-10 col-xs-12">
                             <select class="form-control" id="list_cat">
                                 <option value="0">------- {{ trans( 'config.list_cat' ) }} ------</option>
-                                @php
-                                cate_parent($categories)
-                                @endphp
+                                @foreach ($categories as $cat_parent)
+                                    <option value="{{ $cat_parent->id }}">==|| {{ $cat_parent->name }}</option>
+                                    @foreach ($cat_parent->childs as $child)
+                                        <option value="{{ $child->id }}">==||==|| {{ $child->name }}</option>
+                                        @foreach ($child->childs as $child2)
+                                            <option value="{{ $child2->id }}">==||==||==|| {{ $child2->name }}</option>
+                                        @endforeach
+                                    @endforeach
+                                @endforeach
                             </select>
                             <br>
                             <small>* {{ trans( 'config.list_cat' ) }}</small>
@@ -84,9 +99,9 @@
                             {!! Form::select('bedrooms', config('size.array_option'), $apartmentEdit->bedrooms, [ 'class' => 'form-control col-md-7 col-xs-12' ]) !!}
                         </div>
                         <div class="item form-group">
-                            {!!   htmlspecialchars_decode( Form::label( 'Bathrooms', trans( 'config.bathrooms' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
+                            {!!   htmlspecialchars_decode( Form::label( 'Toilet', trans( 'config.toilet' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
                             <div class="col-md-2 col-sm-2 col-xs-2">
-                                {!! Form::select('bathrooms', config('size.array_option'), $apartmentEdit->bathrooms, [ 'class' => 'form-control col-md-7 col-xs-12' ]) !!}
+                                {!! Form::select('Toilet', config('size.array_option'), $apartmentEdit->Toilet, [ 'class' => 'form-control col-md-7 col-xs-12' ]) !!}
                             </div>
                             <div class="item form-group">
                             {!!   htmlspecialchars_decode( Form::label( 'Garage', trans( 'config.garage' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
@@ -99,7 +114,7 @@
                     <div class="form-group">
                         {!!   htmlspecialchars_decode( Form::label( 'Images', trans( 'config.imgPro' ).'<span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ) )  !!}
                         <div class="col-md-4 col-sm-4 col-xs-12">
-                            <a href="javascript:open_popup( '{!! url( '' ) !!}/assets/filemanager/dialog.php?type=1&popup=1&field_id=fieldID' )" class="thumbnail open-file-img">
+                            <a href="javascript:open_popup( '{!! url( '' ) !!}/assets/filemanager/dialog.php?type=1&popup=1&field_id=fieldID' )" class="thumbnail open-file-img img-1">
                                 {!!  Html::image( $apartmentEdit->image, $apartmentEdit->image,[ 'class'=>'imagePreview' ] )  !!}
                             </a>
                         </div>
@@ -122,7 +137,7 @@
                                 @foreach (unserialize($apartmentEdit->img_detail) as $img)
                                     <li>
                                         <div class="col-md-2 col-sm-2 col-xs-3">
-                                            <a  href="javascript:open_popup( '{!! url( '' ) !!}/assets/filemanager/dialog.php?type=1&popup=1&field_id=fieldID_img_color{{ $count +=1 }}' )" class="thumbnail open-file-img">
+                                            <a  href="javascript:open_popup( '{!! url( '' ) !!}/assets/filemanager/dialog.php?type=1&popup=1&field_id=fieldID_img_color{{ $count +=1 }}' )" class="thumbnail open-file-img img-2">
                                                 {!!  Html::image( $img, ' ',[ 'class'=>'Preview_img_color' ] )  !!}
                                             </a>
                                             <small>* {{ trans('config.img_detail') }}</small>
@@ -186,6 +201,48 @@
                             </p>
                         </div>
                     </div>
+                      <div class="item form-group">
+                        {!!   htmlspecialchars_decode( Form::label( 'conditions',trans( 'apartment.conditions' ).' <span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ))  !!}
+                        <div class="col-md-10 col-sm-10 col-xs-12">
+                            <ul class="conditions">
+                                @foreach ($conditions as $condition)
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                              <input type="checkbox" name="conditions[]" value="{{ $condition->id }}" @if(in_array($condition->id,unserialize($apartmentEdit->conditions))) {{ 'checked' }} @endif>{!! $condition->icon !!}  {{ $condition->name }}
+                                            </label>
+                                         </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <div class="clearfix"></div>
+                            <br>
+                            <p>
+                                <small>* checked in to checkbox</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        {!!   htmlspecialchars_decode( Form::label( 'features',trans( 'apartment.features' ).' <span class="required">*</span>', [ 'class' => 'control-label col-md-2 col-sm-2 col-xs-12' ]  ))  !!}
+                        <div class="col-md-10 col-sm-10 col-xs-12">
+                            <ul class="conditions">
+                                @foreach ($features as $feature)
+                                    <li>
+                                        <div class="checkbox">
+                                            <label>
+                                              <input type="checkbox" name="features[]" value="{{ $feature->id }}" @if(in_array($feature->id,unserialize($apartmentEdit->features))) {{ 'checked' }} @endif>{!! $feature->icon !!}  {{ $feature->name }}
+                                            </label>
+                                         </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <div class="clearfix"></div>
+                            <br>
+                            <p>
+                                <small>* checked in to checkbox</small>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,6 +266,28 @@
                                 </label>
                             </div>
                             @endforeach
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        {!!   htmlspecialchars_decode( Form::label( 'status',trans( 'apartment.featured_products' ).' <span class="required"></span>', [ 'class' => 'control-label col-md-3 col-sm-3 col-xs-12' ]  ))  !!}
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="radio">
+                                <label class="">
+                                    <div class="iradio_flat-green checked" >
+                                        <input type="radio" class="flat" checked="" value="1" @if ($apartmentEdit->featured_product == 1){!! 'checked' !!} @endif name="featured_product">
+                                        <ins class="iCheck-helper"></ins>
+                                    </div>
+                                    Checked
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="">
+                                    <div class="iradio_flat-green checked" ><input type="radio" value="0" @if ($apartmentEdit->featured_product == 0){!! 'checked' !!} @endif class="flat" name="featured_product" >
+                                        <ins class="iCheck-helper"></ins>
+                                    </div>
+                                    Un Checked
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="item form-group">

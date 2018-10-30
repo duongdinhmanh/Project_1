@@ -40,33 +40,35 @@
     <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body class="nav-md">
-    <div class="container body">
-        <div class="main_container">
-            <div class="col-md-3 left_col">
-                @include( 'admin.nav_left' )
-            </div>
-            <!-- top navigation -->
-            <div class="top_nav">
-                @include( 'admin.nav_top' )
-            </div>
-            <!-- /top navigation -->
-
-            <!-- page content -->
-            <div class="right_col" role="main">
-                <!-- CONTENT -->
-                @yield( 'content' )
-                <!-- CONTENT -->
-            </div>
-            <!-- /page content -->
-
-            <!-- footer content -->
-            <footer>
-                <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+    <div id="app">
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    @include( 'admin.nav_left' )
                 </div>
-                <div class="clearfix"></div>
-            </footer>
-            <!-- /footer content -->
+                <!-- top navigation -->
+                <div class="top_nav">
+                    @include( 'admin.nav_top' )
+                </div>
+                <!-- /top navigation -->
+
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <!-- CONTENT -->
+                    @yield( 'content' )
+                    <!-- CONTENT -->
+                </div>
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
         </div>
     </div>
 
@@ -120,7 +122,58 @@
     @stack( 'scripts_apartment' )
 
     <script src="js/admin.js"></script>
+    {{-- <script src="js/app.js"></script> --}}
     <script type="text/javascript" src="js/ajax.js"></script>
+
+    {{-- <script type="text/javascript">
+    var notificationsWrapper   = $('.dropdown-notifications');
+    var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
+    var notificationsCountElem = notificationsToggle.find('i[data-count]');
+    var notificationsCount     = parseInt(notificationsCountElem.data('count'));
+    var notifications          = notificationsWrapper.find('ul.dropdown-menu');
+
+
+    // Enable pusher logging - don't include this in production
+     Pusher.logToConsole = true;
+
+    var pusher = new Pusher('{{env('98f54791f40781cfe5ee')}}', {
+        cluster: 'mt1',
+        encrypted: true
+    });
+
+    // Subscribe to the channel we specified in our Laravel Event
+    var channel = pusher.subscribe('setCalendarEvent');
+
+    // Bind a function to a Event (the full Laravel class)
+    channel.bind('send-message', function(data) {
+        var existingNotifications = notifications.html();
+        var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
+        var newNotificationHtml = `
+          <li class="notification active">
+              <div class="media">
+                <div class="media-left">
+                  <div class="media-object">
+                    <img src="https://api.adorable.io/avatars/71/`+avatar+`.png" class="img-circle" alt="50x50" style="width: 50px; height: 50px;">
+                  </div>
+                </div>
+                <div class="media-body">
+                  <strong class="notification-title">`+data.title+`</strong>
+                  <p class="notification-desc">`+data.content+`</p>
+                  <div class="notification-meta">
+                    <small class="timestamp">about a minute ago</small>
+                  </div>
+                </div>
+              </div>
+          </li>
+        `;
+        notifications.html(newNotificationHtml + existingNotifications);
+
+        notificationsCount += 1;
+        notificationsCountElem.attr('data-count', notificationsCount);
+        notificationsWrapper.find('.notif-count').text(notificationsCount);
+        notificationsWrapper.show();
+    });
+</script> --}}
 </body>
 </html>
 

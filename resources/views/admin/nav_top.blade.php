@@ -42,60 +42,36 @@
             </li>
             {{--end i18n--}}
 
-            <li role="presentation" class="dropdown">
-                <a href="javascript:" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
+         {{--    <ul class="nav navbar-nav">
+                <li class="dropdown dropdown-notifications">
+                    <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
+                        <i data-count="0" class="glyphicon glyphicon-bell notification-icon"></i>
+                    </a>
+
+                    <div class="dropdown-container">
+                        <div class="dropdown-toolbar">
+                            <div class="dropdown-toolbar-actions">
+                                <a href="#">Mark all as read</a>
+                            </div>
+                            <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">0</span>)</h3>
+                        </div>
+                        <ul class="dropdown-menu">
+                        </ul>
+                        <div class="dropdown-footer text-center">
+                            <a href="#">View All</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Timeline</a></li>
+                <li><a href="#">Friends</a></li>
+            </ul> --}}
+
+            <li role="presentation" class="dropdown dropdown-notifications">
+                <a href="#notifications-panel" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i data-count="0" class="glyphicon glyphicon-bell notification-icon"></i>
                 </a>
-                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                        <a>
-                            <span class="image"><img src="assets/upload/config/img.jpg" alt="Profile Image"/></span>
-                            <span>
-                <span>John Smith</span>
-                <span class="time">3 mins ago</span>
-              </span>
-                            <span class="message">
-                Film festivals used to be do-or-die moments for movie makers. They were whereassets.
-              </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class="image"><img src="assets/upload/config/img.jpg" alt="Profile Image"/></span>
-                            <span>
-                <span>John Smith</span>
-                <span class="time">3 mins ago</span>
-              </span>
-                            <span class="message">
-                Film festivals used to be do-or-die moments for movie makers. They were whereassets.
-              </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class="image"><img src="assets/upload/config/img.jpg" alt="Profile Image"/></span>
-                            <span>
-                <span>John Smith</span>
-                <span class="time">3 mins ago</span>
-              </span>
-                            <span class="message">
-                Film festivals used to be do-or-die moments for movie makers. They were whereassets.
-              </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class="image"><img src="assets/upload/config/img.jpg" alt="Profile Image"/></span>
-                            <span>
-                <span>John Smith</span>
-                <span class="time">3 mins ago</span>
-              </span>
-                            <span class="message">
-                Film festivals used to be do-or-die moments for movie makers. They were whereassets.
-              </span>
-                        </a>
-                    </li>
+                <ul class="dropdown-menu">
+                    <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">0</span>)</h3>
                     <li>
                         <div class="text-center">
                             <a>

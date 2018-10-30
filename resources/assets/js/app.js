@@ -17,9 +17,15 @@ window.Vue = require('vue');
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+// const app = new Vue({
+//     el: '#app',
+//     created() {
+//         Echo.channel('send-message')
+//         .listen('setCalendarEvent', (e) => {
+//             console.log(e);
+//         })
+//     }
+// });
 //
 //
 //

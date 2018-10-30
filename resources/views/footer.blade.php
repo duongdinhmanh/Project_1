@@ -103,9 +103,10 @@
                     <h4>Subscribe</h4>
                     <div class="Subscribe-box">
                         <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-                        <form action="#" method="GET">
+                        <form action="{{ route('postSendEmail') }}" method="POST">
+                            @scrf
                             <p>
-                                <input type="text" class="form-contact" name="email" placeholder="Enter Address">
+                                <input type="email" class="form-contact" name="email" placeholder="Enter Address">
                             </p>
                             <p>
                                 <button type="submit" name="submitNewsletter" class="btn btn-block btn-color">

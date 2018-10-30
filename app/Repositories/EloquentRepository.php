@@ -49,6 +49,7 @@ abstract class EloquentRepository implements RepositoryInterface
     public function find($id)
     {
         $result = $this->_model->find($id);
+
         return $result;
     }
 

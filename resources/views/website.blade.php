@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css"  href="bower_components/demo-bower/assets/website/css/skins/default.css">
 
 </head>
+<body>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -115,6 +116,9 @@
         $(function() {
             $( "#datepicker-1" ).datepicker();
         });
+
+        // facebook - comment
+    // document.getElementsByClassName("fb-comments")[0].setAttribute("data-href", window.location.href);
     });
 </script>
 </body>

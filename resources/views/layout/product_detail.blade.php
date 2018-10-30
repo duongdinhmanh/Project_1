@@ -3,10 +3,10 @@
 <div class="sub-banner overview-bgi">
     <div class="container">
         <div class="breadcrumb-area">
-            <h1>Property Detail 1</h1>
+            <h1>{{ $apartmentDetail->name }}</h1>
             <ul class="breadcrumbs">
                 <li><a href="{{ route('home') }}">Home</a></li>
-                <li class="active">Property Detail 1</li>
+                <li class="active">{{ $apartmentDetail->name }}</li>
             </ul>
         </div>
     </div>
@@ -24,7 +24,7 @@
                                     <p><i class="fa fa-map-marker"></i> {{ $apartmentDetail->address }}</p>
                                 </div>
                                 <div class="p-r">
-                                    <h3>{{ number_format($apartmentDetail->price) }}</h3>
+                                    <h3>{{ number_format($apartmentDetail->price) }}/m2</h3>
                                     <p><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
                                 </div>
                             </div>
@@ -271,7 +271,7 @@
                 <div class="sidebar mbl">
                     <!-- Search area start -->
                    <div class="widget search-area d-none d-xl-block d-lg-block">
-                        <h5 class="sidebar-title">Advanced Search</h5>
+                        <h5 class="sidebar-title">Tìm Kiếm</h5>
                         <div class="search-area-inner">
                             <div class="search-contents ">
                                 {!!  Form::open([ 'method' => 'POST','action' => 'Web\HomeController@searchApartment'])  !!}
@@ -285,17 +285,17 @@
                                         {!! htmlspecialchars_decode(Form::select('ward',$ward , null, [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! htmlspecialchars_decode(Form::select('bedrooms',config('size.array_option_bedrooms') , null , [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                        {!! htmlspecialchars_decode(Form::select('bedrooms',config('size.array_option_bedrooms') , null , [ 'class' => 'selectpicker search-fields'])) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! htmlspecialchars_decode(Form::select('bathrooms',config('size.array_option_bathrooms') , null , [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                        {!! htmlspecialchars_decode(Form::select('Toilet',config('size.array_option_bathrooms') , null , [ 'class' => 'selectpicker search-fields'])) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! htmlspecialchars_decode(Form::select('apartment_acreage',$apartment_acreage, null , [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                        {!! htmlspecialchars_decode(Form::select('acreage',config('size.aray_option_sq'), null , [ 'class' => 'selectpicker search-fields', 'id' => 'ward', 'placeholder'=> 'Chọn Diện Tích' ])) !!}
                                     </div>
                                     <div class="form-group">
                                         <div class="range-slider">
-                                            <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                            <div data-min="0" data-max="15000000" data-unit="VND" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
@@ -325,45 +325,21 @@
 
                     <!-- Recent posts start -->
                     <div class="widget recent-posts">
-                        <h5 class="sidebar-title">Recent Properties</h5>
-                        <div class="media mb-4">
-                            <a class="pr-4" href="properties-details.html">
-                                <img src="assets/img/sub-property/sub-property.jpg" alt="sub-property">
-                            </a>
-                            <div class="media-body align-self-center">
-                                <h5>
-                                    <a href="properties-details.html">Beautiful Single Home</a>
-                                </h5>
-                                <p>February 27, 2018</p>
-                                <p> <strong>$245,000</strong></p>
+                        <h5 class="sidebar-title">Sản Phẩm Liên Quan</h5>
+                        @foreach ($newsAprtment as $news_item)
+                            <div class="media mb-4">
+                                <a class="pr-4" href="properties-details.html">
+                                    <img src="{{ $news_item->image }}" alt="sub-property">
+                                </a>
+                                <div class="media-body align-self-center">
+                                    <h5>
+                                        <a href="properties-details.html">{{ $news_item->name }}</a>
+                                    </h5>
+                                    <p>{{ change_time_to_text($news_item->created_at) }}</p>
+                                    <p> <strong>{{ number_format($news_item->price) }}/m2</strong></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="media mb-4">
-                            <a class="pr-4" href="properties-details.html">
-                                <img src="assets/img/sub-property/sub-property-2.jpg" alt="sub-property-2">
-                            </a>
-                            <div class="media-body align-self-center">
-                                <h5>
-                                    <a href="properties-details.html">Sweet Family Home</a>
-                                </h5>
-                                <p>February 27, 2018</p>
-                                <p> <strong>$245,000</strong></p>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <a class="pr-4" href="properties-details.html">
-                                <img src="assets/img/sub-property/sub-property-3.jpg" alt="sub-property-3">
-                            </a>
-                            <div class="media-body align-self-center">
-                                <h5>
-                                    <a href="properties-details.html">Real Luxury Villa</a>
-                                </h5>
-                                <p>February 27, 2018</p>
-                                <p> <strong>$245,000</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
+                        @endforeach
                     <!-- Social list start -->
                     <div class="social-list widget clearfix">
                         <h5 class="sidebar-title">Follow Us</h5>
@@ -419,7 +395,45 @@
     </div>
 </div>
 <!-- Post  start -->
-@include('layout.post')
+<div class="blog-2 content-area">
+    <div class="container">
+        <div class="main-title">
+            <h1>Blog</h1>
+        </div>
+        <div class="row">
+            @foreach ($posts as $post)
+                @if (in_array($post->id, unserialize($apartmentDetail->post_id) ))
+                    <div class="col-lg-6 col-md-6 wow fadeInLeft delay-04s">
+                        <div class="row blog-list">
+                            <div class="col-lg-5 col-md-12 col-pad ">
+                                <div class="photo">
+                                    <img src="{{ $post->image }}" alt="blog-4" class="img-fluid fit-cover h-100">
+                                    <div class="date-box">
+                                        <h5>03</h5>
+                                        <h5>May</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-12 col-pad align-self-center post">
+                                <div class="detail">
+                                    <h3>
+                                        <a href="">{{ $post->title }}</a>
+                                    </h3>
+                                    <div class="post-meta">
+                                        <span><a href="#"><i class="fa fa-user"></i>John Antony</a></span>
+                                        <span><a href="#"><i class="fa fa-clock-o"></i>7 Comment</a></span>
+                                    </div>
+                                    <p class="desc-post">{{ $post->desc }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+        </div>
+    </div>
+</div>
+
 <!-- Post  start -->
 
 <!-- partner start -->

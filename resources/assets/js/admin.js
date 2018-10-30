@@ -136,7 +136,7 @@ $(document).ready(function() {
         var url = "javascript:open_popup('http://localhost/assets/filemanager/dialog.php?type=1&popup=1&field_id=fieldID_img_color"+count+"')";
         var html ='<li>';
         html  +='<div class="col-md-2 col-sm-2 col-xs-3" >';
-        html  +='<a href="'+url+'" class="thumbnail open-file-img"><img class="Preview_img_color'+count+'" src="assets/upload/config/no-image.png" alt=""> </a><small>* images detail product </small> <input id="fieldID_img_color'+count+'" type="hidden" value="" name="img_detail[]" /><a href="'+url+'">';
+        html  +='<a href="'+url+'" class="thumbnail open-file-img img-2"><img class="Preview_img_color'+count+'" src="assets/upload/config/no-image.png" alt=""> </a><small>* images detail product </small> <input id="fieldID_img_color'+count+'" type="hidden" value="" name="img_detail[]" /><a href="'+url+'">';
         html  +='<button type="button" class="btn btn-sm btn-success choose-img">Choose IMG</button> </a><button type="button" class="btn btn-xs btn-danger del_pro_img"><i class="fa fs-xs fa-trash" style=""></i></button>';
         html  +='</div>';
         html  +='</li>';
@@ -166,8 +166,40 @@ $(document).ready(function() {
 
   });
 
-// facebook - comment
-    document.getElementsByClassName("fb-comments")[0].setAttribute("data-href", window.location.href);
-
-
+window.onload = function () {
+        Chart.defaults.global.defaultFontColor = '#000000';
+        Chart.defaults.global.defaultFontFamily = 'Arial';
+        var lineChart = document.getElementById('line-chart');
+        var myChart = new Chart(lineChart, {
+            type: 'line',
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "June"],
+                datasets: [
+                    {
+                        label: 'total amount ',
+                        data: [80, 30, 63, 20, 110, 3],
+                        backgroundColor: 'rgba(0, 128, 128, 0.3)',
+                        borderColor: 'rgba(0, 128, 128, 0.7)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'total amount active',
+                        data: [18, 72, 10, 39, 19, 75],
+                        backgroundColor: 'rgba(0, 128, 128, 0.7)',
+                        borderColor: 'rgba(0, 128, 128, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                },
+            }
+        });
+    };
 
