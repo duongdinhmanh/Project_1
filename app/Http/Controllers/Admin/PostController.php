@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\PostFormRequest;
 use App\Http\Requests\PostFormUpdateRequest;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
@@ -48,9 +48,6 @@ class PostController extends Controller
     {
         $input = $request->all();
         $image = $input['image'];
-//        dd($image);
-//        $input['image'] = substr_replace($this->cutLinkImage($image), '', -1);
-//        dd($input['image']);
         Post::create($input);
 
         return redirect('admin/posts/create')->with('success', trans('post.create_post_success'));
@@ -80,7 +77,6 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-//        $categories = DB::table('categories')->pluck('name', 'id')->all();
         $categories = Category::all()->pluck('name', 'id');
         $selectedCategories = $post->category->id;
 
@@ -99,11 +95,9 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $input = $request->all();
-//        $image = $input['image'];
-//        $input['image'] = substr_replace($this->cutLinkImage($image), '', -1);
         $post->update($input);
 
-        return back()->with('success', trans('post.update_post_success'));
+        return redirect()->route('posts.index')->with('success', trans('post.update_post_success'));
     }
 
     /**

@@ -422,11 +422,8 @@ div {
     border: 1px solid #fff;
     padding: 50px;
 }
-
 #customer {
-    li {
-        width: 140px!important;
-    }
+    width: 45%!important;
 }
 #apartment_list_set_calendar_detail {
     img {
@@ -443,4 +440,150 @@ div {
 
 .width_profile{
     width: 100%;
+}
+.w-50 {
+    width : 25%!important;
+}
+#menu {
+    text-transform: uppercase!important;
+}
+.active {
+    color: #1ABB9C;
+}
+.recent-posts {
+    .media {
+        img {
+            width: 80px;
+            height: 70px;
+            overflow: hidden;
+           object-fit: cover;
+        }
+    }
+}
+.img-1 {
+    img {
+        width: 320px;
+        height: 240px;
+        overflow: hidden;
+       object-fit: cover;
+    }
+}
+.img-2 {
+    img {
+        width: 130px;
+        height: 86px;
+        overflow: hidden;
+        object-fit:cover!important;
+    }
+}
+
+.smail-properties {
+    li {
+        a{
+            img {
+                width: 146px;
+                height: 97px;
+                overflow: hidden;
+                object-fit:cover!important;
+            }
+        }
+    }
+}
+.img-fluid-main {
+    width: 350px!important;
+    height: 234px!important;
+    overflow: hidden;
+    object-fit:cover!important;
+}
+
+.detail {
+    .title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+.location {
+    a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.conditions {
+    li {
+        float :left;
+        list-style: none;
+        width: 123px;
+    }
+}
+
+.img-post {
+    width: 130px;
+    height: 86px;
+    overflow: hidden;
+    object-fit:cover!important;
+}
+
+#table-post {
+    tr {
+        td {
+            vertical-align: middle!important;
+        }
+    }
+}
+.photo {
+    img {
+        width: 224px;
+        height: 227px!important;
+        overflow: hidden;
+        object-fit:cover!important;
+    }
+}
+.post {
+    .detail {
+        h3 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .desc-post {
+            display: -webkit-box;
+            -webkit-line-clamp : 3;
+            -webkit-box-orient: vertical;
+            line-height: 1.4em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+.fa-child {
+    margin-right: 0px!important;
+}
+
+ .desc-post-search {
+    display: -webkit-box;
+    -webkit-line-clamp : 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.blog-grid-box{
+    img {
+        width: 350px;
+        height: 233px!important;
+        overflow: hidden;
+        object-fit:cover!important;
+    }
+}
+
+.blog-detail{
+    img {
+        width: 730px!important;
+        height: 386px!important;
+        overflow: hidden;
+        object-fit:cover!important;
+    }
 }

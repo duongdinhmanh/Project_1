@@ -19,9 +19,9 @@ class AdminloginMiddleware
     {
         // Dung middleware de check loi url ... con Phan Request la de bat loi form khi input
 
-        if (Auth::check()) {
+        if (Auth::check() && Auth::user()->role == 1) {
             $user = Auth::user();
-            if ($user->status == 1 && $user->role == 1) {
+            if ($user->status == 1) {
                 return $next($request);
             } else {
                 return redirect()->route('login');

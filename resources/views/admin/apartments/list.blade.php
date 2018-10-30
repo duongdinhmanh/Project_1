@@ -3,10 +3,16 @@
 <div class="">
     <div class="page-title">
         <div class="title_left">
-            <h3>Products <small>List</small></h3>
+            <h3>{{ trans('apartment.list_apartment_title') }}</h3>
+        </div>
+         <div class="title_right">
+            <ol class="breadcrumb">
+                <li><a href="{{ action('Admin\DashboardController@index') }}">{{ trans('category.home') }}</a></li>
+                <li class="active">{{ trans('apartment.list_apartment') }}</li>
+            </ol>
         </div>
     </div>
-<div class="clearfix"></div>
+<div class="clearfix clearfix_top"></div>
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
       @include('admin.message')
@@ -54,7 +60,7 @@
     { "data": 'image', "name": 'image',
     "render": function (data, type, full, meta) {
 
-        return "<img src=\""+data+" \" height=\"auto\" \" width=\"100\"/>";
+        return "<img src=\""+data+" \" height=\"67\" \" width=\"100\" object-fit=\"cover\" />";
     },
 },
 { "data": 'name', "name": 'name' },
@@ -69,7 +75,11 @@
     return x ;
 },
 },
-{ "data": 'price', "name": 'price'},
+{ "data": 'price', "name": 'price',
+    "render": function(data){
+        return data.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+    }
+},
 { "data": 'address', "name": 'address ' },
 { "data": 'created_at', "name": 'created_at' },
 { "data": 'status', "name": 'status',orderable: false, searchable: false,

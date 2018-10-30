@@ -69,13 +69,18 @@
                             {{--label parent category--}}
                             {!! htmlspecialchars_decode(Form::label('parent_category', trans('category.label_category') . ' <span class="required">*</span>', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))) !!}
                             <div class="col-md-8 col-sm-8 col-xs-12">
-                                {{--select; categories: mảng category cha;--}}
-                                {{--if parent_id == 0 thì disabled không cho chọn sửa lại danh mục cha. ngược lại.--}}
-                                @if ($category->parent_id == 0)
-                                    {!! Form::select('parent_id',$categories, null, ['disabled'=>'disabled','class'=>'form-control', 'placeholder'=>trans('category.select_category')]) !!}
-                                @else
-                                    {!! Form::select('parent_id',$categories, null, ['class'=>'form-control', 'placeholder'=>trans('category.select_category')]) !!}
-                                @endif
+                                <select class="form-control" name="parent_id">
+                                    <option value="0">------- {{ trans( 'config.list_cat' ) }} ------</option>
+                                    @foreach ($categories as $cat_parent)
+                                        <option value="{{ $cat_parent->id }}">==|| {{ $cat_parent->name }}</option>
+                                        @foreach ($cat_parent->childs as $child)
+                                            <option value="{{ $child->id }}">==||==|| {{ $child->name }}</option>
+                                            @foreach ($child->childs as $child2)
+                                                <option value="{{ $child2->id }}">==||==||==|| {{ $child2->name }}</option>
+                                            @endforeach
+                                        @endforeach
+                                    @endforeach
+                                </select>
                                 <span class="text-danger">{{ $errors->first('parent_id') }}</span>
                             </div>
                         </div>

@@ -28,17 +28,9 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_content">
-
                         {{--Open Form--}}
                         {!! Form::model($post, ['method' => 'PUT', 'route' => ['posts.update', $post->id], 'class' => 'form-horizontal form-label-left']) !!}
                         <span class="section">{{ trans('post.title_edit') }}</span>
-                        {{--If success, alert success--}}
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-                        {{--Title--}}
                         <div class="item form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                             {{--lable Title:--}}
                             {!! htmlspecialchars_decode(Form::label('title_post', trans('post.lable_title') . ' <span class="required">*</span>', ['class' => 'control-label col-md-3 col-sm-3 col-xs-12'])) !!}
@@ -98,24 +90,13 @@
                         <div class="item form-group {{ $errors->has('image') ? 'has-error' : '' }}">
                             {{--lable image:--}}
                             {!! htmlspecialchars_decode(Form::label('image_post', trans('post.label_img') . ' <span class="required">*</span>', ['class' => 'control-label col-md-3 col-sm-3 col-xs-12'])) !!}
-                            {{--get url--}}
-                            @php
-                                $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-                            @endphp
-                            {{--{{ $actual_link. '/assets/upload/'.$post->image }}--}}
-                            {{ $actual_link . $post->image }}
-                            <div class="col-md-8 col-sm-8 col-xs-12">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
                                 <a href="javascript:open_popup('{{ config('common.filemanager') }}dialog.php?type=1&popup=1&field_id=fieldID')"
-                                   class="thumbnail size_img">
-                                    {{--<img class="imagePreview" src="{!! $actual_link . config('common.image_upload') . $post->image !!}" alt="">--}}
-                                    <img class="imagePreview"
-                                         src="{!! $actual_link . $post->image !!}"
-                                         alt="">
+                                   class="thumbnail size_img img-1">
+                                    <img class="imagePreview" src="{!! $post->image !!}" alt="">
                                 </a>
                                 {{--<input id="fieldID" type="hidden" value="{!! $actual_link . config('common.image_upload') . $post->image !!}" name="image" enctype="multipart/form-data"/>--}}
-                                <input id="fieldID" type="hidden"
-                                       value="{!! $actual_link . $post->image !!}"
-                                       name="image" enctype="multipart/form-data"/>
+                                <input id="fieldID" type="hidden" value="{!! $post->image !!}" name="image" enctype="multipart/form-data"/>
                                 <a href="javascript:open_popup('{{ config('common.filemanager') }}dialog.php?type=1&popup=1&field_id=fieldID')">
                                     <button type="button"
                                             class="btn btn-success mar_bot">{{ trans('post.btn_img') }}</button>

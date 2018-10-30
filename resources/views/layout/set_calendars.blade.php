@@ -59,7 +59,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4" style="margin-top: 100px">
+            <div class="col-lg-4 col-md-4 col-sm-4" style="margin-top: 120px">
                 <div id="propertiesDetailsSlider" class="carousel properties-details-sliders slide mb-60">
                     <div class="heading-properties">
                         <div class="row">
@@ -69,7 +69,7 @@
                                     <p  style="color: #fff"><i class="fa fa-map-marker"></i> {{ $apartmentOrder->address }}</p>
                                 </div>
                                 <div class="p-r">
-                                    <h3  style="color: #fff">{{ number_format($apartmentOrder->price) }}</h3>
+                                    <h3  style="color: #fff">{{ number_format($apartmentOrder->price) }}/m2</h3>
                                     <p><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
                                 </div>
                             </div>

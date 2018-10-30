@@ -67,6 +67,6 @@ return [
     'detail_note' => 'fill out basic information about the product...',
     'img_detail' => 'images detail product',
     'bedrooms' => 'Bedrooms',
-    'bathrooms' => 'Bathrooms',
+    'toilet' => 'Toilet',
     'garage' => 'Garage',
 ];
