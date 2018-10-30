@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryFormRequest;
 use App\Http\Requests\CategoryFormUpdateRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
@@ -17,8 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::parentCategory()->get();
-        $allCategories = Category::pluck('name', 'id')->all();
+        $categories = Category::parentCategory()->paginate(5);
         $serial = config('default_zero');
         $serial_child = config('default_one');
 
@@ -32,8 +31,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $categories = Category::parentCategory()->pluck('name', 'id');
-
+        $categories = Category::parentCategory()->get();
         return view('admin.category.create', compact('categories'));
     }
 
@@ -75,8 +73,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-//        $categories = DB::table('categories')->where('parent_id', '=', 0)->pluck('name', 'id')->all();
-        $categories = Category::parentCategory()->pluck('name', 'id');
+        $categories = Category::parentCategory()->get();
 
         return view('admin.category.edit', compact('category', 'categories'));
     }
@@ -94,7 +91,7 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->update($request->all());
 
-        return back()->with('success', trans('category.update_category_success'));
+        return redirect()->route('categories.index')->with('success', trans('category.update_category_success'));
     }
 
     /**
@@ -109,8 +106,10 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
 
-        return redirect('admin/categories')->with('success',
-            trans('category.delete_category_success', ['name' => $category->name]));
+        return redirect('admin/categories')->with(
+            'success',
+            trans('category.delete_category_success', ['name' => $category->name])
+        );
     }
 
     public function hiddenStatusCategories(Request $request, $id)

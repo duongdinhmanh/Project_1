@@ -101,11 +101,10 @@
                             {!! htmlspecialchars_decode(Form::label('image_post',trans('post.label_img') . ' <span class="required">*</span>', ['class' => 'control-label col-md-3 col-sm-3 col-xs-12'])) !!}
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <a href="javascript:open_popup('{{ config('common.filemanager') }}dialog.php?type=1&popup=1&field_id=fieldID')"
-                                   class="thumbnail size_img">
+                                   class="thumbnail size_img img-1">
                                     <img class="imagePreview" src="{{ config('common.img') }}no-image.png"
                                          alt="">
                                 </a>
-
                                 <input id="fieldID" type="hidden" value="" name="image" enctype="multipart/form-data"/>
                                 <a href="javascript:open_popup('{{ config('common.filemanager') }}dialog.php?type=1&popup=1&field_id=fieldID')">
                                     <button type="button"

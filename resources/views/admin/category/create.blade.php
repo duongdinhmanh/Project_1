@@ -28,7 +28,6 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_content">
-
                         {{--Open Form--}}
                         {!! Form::open(['method' => 'POST', 'route' => ['categories.store'],'class' => 'form-horizontal form-label-left']) !!}
                         <span class="section">{{ trans('category.title_create') }}</span>
@@ -38,11 +37,9 @@
                                 {{ session('success') }}
                             </div>
                         @endif
-
                         <div class="item form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                             {{--lable Name:--}}
                             {!! htmlspecialchars_decode(Form::label('name_category', trans('category.label_name') . ' <span class="required">*</span>', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))) !!}
-
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 {{--Input name--}}
                                 {!! Form::text('name', old('name'), ['id' => 'name', 'class' => 'form-control col-md-7 col-xs-12 input_slug',
@@ -53,11 +50,9 @@
                                 </p>
                             </div>
                         </div>
-
                         <div class="item form-group">
                             {{--lable slug--}}
                             {!! htmlspecialchars_decode(Form::label('slug_category', trans('category.label_slug') . ' <span class="required">*</span>', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))) !!}
-
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 {{--input slug--}}
                                 {!! Form::text('slug', old('slug'), ['class' => 'form-control col-md-7 col-xs-12 output_slug', 'placeholder' => trans('category.place_slug')]) !!}
@@ -67,22 +62,29 @@
                                 </p>
                             </div>
                         </div>
-
                         <div class="item form-group">
                             {{--label parent category--}}
                             {!! htmlspecialchars_decode(Form::label('parent_category', trans('category.label_category') . ' <span class="required">*</span>', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))) !!}
-
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 {{--select--}}
-                                {!! Form::select('parent_id', $categories, old('parent'), ['class' => 'form-control', 'placeholder' => trans('category.select_category')]) !!}
-                                <span class="text-danger">{{ $errors->first('parent_id') }}</span>
+                            <select class="form-control" name="parent_id">
+                                <option value="0">------- {{ trans( 'config.list_cat' ) }} ------</option>
+                                @foreach ($categories as $cat_parent)
+                                    <option value="{{ $cat_parent->id }}">==|| {{ $cat_parent->name }}</option>
+                                    @foreach ($cat_parent->childs as $child)
+                                    <option value="{{ $child->id }}">==||==|| {{ $child->name }}</option>
+                                        @foreach ($child->childs as $child2)
+                                            <option value="{{ $child2->id }}">==||==||==|| {{ $child2->name }}</option>
+                                        @endforeach
+                                    @endforeach
+                                @endforeach
+                            </select>
+                            <span class="text-danger">{{ $errors->first('parent_id') }}</span>
                             </div>
                         </div>
-
                         <div class="item form-group">
                             {{--label status--}}
                             {!! htmlspecialchars_decode(Form::label('status_category', trans('category.label_status') . ' <span class="required">*</span>', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12'))) !!}
-
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="radio">
                                     <div class="iradio_flat-green checked radi">
@@ -100,7 +102,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="ln_solid"></div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-3">

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\ApartmentCategory;
 use App\Models\Category;
+use App\Models\Condition;
+use App\Models\Features;
 use App\Models\Post;
 use App\Repositories\EloquentRepository\ApartmentRepository;
 use App\Repositories\InterfaceRepository\ApartmentInterfaceRepository;
@@ -62,8 +64,9 @@ class ApartmentController extends Controller
     {
         $categories = Category::getCategory()->get();
         $posts = Post::where('status', 1)->get();
-
-        return view('admin.apartments.add', compact('categories', 'posts'));
+        $conditions = Condition::where('status', 1)->get();
+        $features = Features::where('status', 1)->get();
+        return view('admin.apartments.add', compact('categories', 'posts', 'conditions', 'features'));
     }
 
     /**
@@ -81,6 +84,10 @@ class ApartmentController extends Controller
             $file = serialize($request->img_detail);
             $request->merge(['img_detail' => $file]);
         }
+        $condition = $request->conditions;
+        $request->merge(['conditions' => serialize($condition)]);
+        $feature = $request->features;
+        $request->merge(['features' => serialize($feature)]);
         $detail_apartment = $this->apartmentRepository->create($request->all());
 
         if ($request->category_id) {
@@ -120,7 +127,9 @@ class ApartmentController extends Controller
         $apartmentCategory = $apartmentEdit->apartmentCategory;
         $categories = Category::getCategory()->get();
         $post = Post::where('status', 1)->get();
-        return view('admin.apartments.edit', compact('categories', 'apartmentEdit', 'apartmentCategory', 'post'));
+        $conditions = Condition::where('status', 1)->get();
+        $features = Features::where('status', 1)->get();
+        return view('admin.apartments.edit', compact('categories', 'apartmentEdit', 'apartmentCategory', 'post', 'conditions', 'features'));
     }
 
     /**
@@ -139,6 +148,10 @@ class ApartmentController extends Controller
             $file = serialize($request->img_detail);
             $request->merge(['img_detail' => $file]);
         }
+        $condition = $request->conditions;
+        $request->merge(['conditions' => serialize($condition)]);
+        $feature = $request->features;
+        $request->merge(['features' => serialize($feature)]);
         $detail_apartment = $this->apartmentRepository->update($apartmentUpdate->id, $request->all());
 
         if ($request->category_id) {

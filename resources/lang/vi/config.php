@@ -60,6 +60,6 @@ return [
     'detail_note' => 'điền thông tin cơ bản về sản phẩm ...',
     'img_detail' => 'Hình Ảnh Chi Tiết',
     'bedrooms' => 'Phòng Ngủ',
-    'bathrooms' => 'Phòng Tắm',
+    'toilet' => 'Phòng Vệ Sinh',
     'garage' => 'Garage',
 ];

@@ -115,6 +115,9 @@
         $(function() {
             $( "#datepicker-1" ).datepicker();
         });
+
+        // facebook - comment
+    // document.getElementsByClassName("fb-comments")[0].setAttribute("data-href", window.location.href);
     });
 </script>
 </body>

@@ -25,25 +25,25 @@
                                 </div>
                                 <div class="col-6 col-lg-3 col-md-3">
                                     <div class="form-group">
-                                        {!! htmlspecialchars_decode(Form::select('bedrooms',config('size.array_option_bedrooms') , $bedrooms, [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                        {!! htmlspecialchars_decode(Form::select('bedrooms',config('size.array_option_bedrooms') , $bedrooms, [ 'class' => 'selectpicker search-fields'])) !!}
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6 col-lg-3 col-md-3">
                                     <div class="form-group">
-                                        {!! htmlspecialchars_decode(Form::select('bathrooms',config('size.array_option_bathrooms') , $bathrooms , [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                        {!! htmlspecialchars_decode(Form::select('Toilet',config('size.array_option_bathrooms') , $Toilet , [ 'class' => 'selectpicker search-fields'])) !!}
                                     </div>
                                 </div>
                                 <div class="col-6 col-lg-3 col-md-3">
                                     <div class="form-group">
-                                        {!! htmlspecialchars_decode(Form::select('apartment_acreage',$apartment_acreage_search, $apartment_acreage , [ 'class' => 'selectpicker search-fields', 'id' => 'ward' ])) !!}
+                                        {!! htmlspecialchars_decode(Form::select('apartment_acreage',config('size.aray_option_sq'), $apartment_acreage , [ 'class' => 'selectpicker search-fields'])) !!}
                                     </div>
                                 </div>
-                                 <div class="col-6 col-lg-3 col-md-3">
+                                <div class="col-6 col-lg-3 col-md-3">
                                     <div class="form-group">
                                         <div class="range-slider">
-                                            <div data-min="{{ $min_price }}" data-max="{{ $max_price }}" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
+                                            <div data-min="0" data-max="15000000" data-unit="VND" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
@@ -92,10 +92,10 @@
                                             <i class="fa fa-star-o"></i>
                                         </div>
                                     </div>
-                                    <img src="{{ $item->image }}" alt="property-7" class="img-fluid">
+                                    <img src="{{ $item->image }}" alt="property-7" class="img-fluid-main">
                                 </a>
                                 <div class="property-overlay">
-                                    <a href="{{ route('apartment-detail') }}" class="overlay-link">
+                                    <a href="{{ route('apartment-detail', $item->slug) }}" class="overlay-link">
                                         <i class="fa fa-link"></i>
                                     </a>
                                     <a class="overlay-link property-video" title="Test Title">
@@ -112,7 +112,7 @@
                             </div>
                             <div class="detail">
                                 <h1 class="title">
-                                    <a href="properties-details.html">{{ $item->name }}</a>
+                                    <a href="{{ route('apartment-detail',$item->slug) }}">{{ $item->name }}</a>
                                 </h1>
                                 <div class="location">
                                     <a href="properties-details.html">
@@ -124,7 +124,7 @@
                                         <i class="flaticon-bed"></i> {{ $item->bedrooms }} Bedrooms
                                     </li>
                                     <li>
-                                        <i class="flaticon-bath"></i> {{ $item->bathrooms }} Bathrooms
+                                        <i class="flaticon-bath"></i> {{ $item->Toilet }} Toilet
                                     </li>
                                     <li>
                                         <i class="flaticon-square-layouting-with-black-square-in-east-area"></i> Sq Ft: {{ $item->acreage }}
@@ -145,6 +145,9 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="col-ld-12">
+                {{ $search->links() }}
             </div>
         </div>
     </div>

@@ -51,11 +51,9 @@
                                 <td class=" ">{{ $order->email }}</td>
                                 <td class="status">
                                     @if ($order->status == 1)
-                                        <button
-                                            class="btn btn-xs btn-success">{{ trans('set_calendar.status_enable') }}</button>
+                                        <i class="fa fa-check-circle active"></i>
                                     @else
-                                        <button
-                                            class="btn btn-xs btn-warning">{{ trans('set_calendar.status_disable') }}</button>
+                                        <i class="fa fa-check-circle "></i>
                                     @endif
                                 </td>
                                 <td>
