@@ -24,10 +24,12 @@
                 <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-round btn-primary">
                     <i class="glyphicon glyphicon-edit"></i>{{ trans('post.edit') }}
                 </a>
+                @role('admin')
                 {{--Delete--}}
                 {!! Form::open(['method' => 'DELETE', 'class' => 'display_form', 'route' => ['posts.destroy', 'id' => $post->id]]) !!}
                 {!! Form::button('<i class="glyphicon glyphicon-trash"></i>' . trans('post.delete'), ['onclick' => "return del_pro('You really want to delete this post')",'title' => 'Delete post', 'class' => 'btn btn-round btn-danger', 'type' => 'submit']) !!}
                 {!! Form::close() !!}
+                @role('admin')
             </div>
         </div>
         <div class="clearfix"></div>

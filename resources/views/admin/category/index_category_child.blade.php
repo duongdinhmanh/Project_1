@@ -40,10 +40,12 @@
                     <i class="fa fa-eye padding"></i>
                 </a>
             @endif
+            @role('admin')
             {{--delete category_child--}}
             {!! Form::open(['method' => 'DELETE', 'class'=>'display_form', 'action' => ['Admin\CategoryController@destroy', 'id' => $sub_cat->id]]) !!}
             {!! Form::button('<i class="fa fa-trash""></i>', ['onclick'=>"return del_pro('You really want to delete this category')",'title'=> 'Delete category', 'class' => 'btn btn-xs btn-danger', 'type' => 'submit']) !!}
             {!! Form::close() !!}
+            @endrole
         </td>
     </tr>
 @endforeach

@@ -63,13 +63,6 @@ return [
 |
  */
 
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-    ],
-
     /*
                         |--------------------------------------------------------------------------
                         | Resetting Passwords
@@ -85,6 +78,13 @@ return [
                         |
     */
 
+	'providers' => [
+		'users' => [
+			'driver' => 'eloquent',
+			'model' => App\Models\User::class,
+            'table' => 'users',
+		],
+
     'passwords' => [
         'users' => [
             'provider' => 'users',
@@ -92,5 +92,5 @@ return [
             'expire' => 60,
         ],
     ],
-
+]
 ];

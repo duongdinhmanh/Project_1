@@ -60,7 +60,7 @@
                     <div class="clearfix"></div>
                     <div class="separator">
                         <p class="change_link">New to site?
-                            <a href="{!! route( 'login' ) !!}#signup" class="to_register"> </a>
+                            <a href="{!! route( 'create_acount' ) !!}" class="to_register">Create Acount</a>
                         </p>
                         <div class="clearfix"></div>
                         <br/>
@@ -75,39 +75,37 @@
             </div>
             <div id="register" class="animate form registration_form">
                 <section class="login_content">
-                    {!! Form::open([  'route' => 'LoginAdmin' ]) !!}
-                    <h1></h1>
-                    <div>
-                        {!! Form::text( 'Username','',[ 'class'=>'form-control','placeholder'=>'Username','required'=>'' ]) !!}
-                    </div>
-                    <div>
-                        {!! Form::email( 'email','',[ 'class'=>'form-control','placeholder'=>'email','required'=>'' ]) !!}
-                    </div>
-                    <div>
-                        {!! Form::password( 'password',[ 'class'=>'form-control','placeholder'=>'password','required'=>'' ]) !!}
-                    </div>
-                    <div>
-                        {!! Form::text( 'text','',[ 'class'=>'form-control','placeholder'=>'address','required'=>'' ]) !!}
-                    </div>
-                    <div>
-                        {!! Form::text( 'phone','',[ 'class'=>'form-control','placeholder'=>'phone','required'=>'' ]) !!}
-                    </div>
-                    <div>
-                        {!! Form::submit( 'Submit',[ 'class'=>'btn btn-default submit' ]) !!}
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="separator">
-                        <p class="change_link">Already a member ?
-                            <a href="{!! route( 'login' ) !!}#signin" class="to_register"> Log in </a>
-                        </p>
-                        <div class="clearfix"></div>
-                        <br/>
+                    <form>
+                        <h1>Create Account</h1>
                         <div>
-                            {!! Html::image( 'assets/upload/logos/black-logo.png', 'All Laravel Logo' ) !!}
-                            <p>©2018 {{ trans('config.AllRightsReserved') }}. XERO! </p>
+                            <input type="text" class="form-control" placeholder="Username" required="" />
                         </div>
-                    </div>
-                    {!! Form::close() !!}
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email" required="" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" required="" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="index.html">Submit</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">Already a member ?
+                                <a href="#signin" class="to_register"> Log in </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
                 </section>
             </div>
         </div>

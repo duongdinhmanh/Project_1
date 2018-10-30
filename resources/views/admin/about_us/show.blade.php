@@ -24,10 +24,12 @@
                 <a href="{{ route('about_us.edit', $aboutUs->id) }}" class="btn btn-round btn-primary">
                     <i class="glyphicon glyphicon-edit"></i>{{ trans('about_us.edit') }}
                 </a>
+                @role('admin')
                 {{--Delete--}}
                 {!! Form::open(['method' => 'DELETE', 'class' => 'display_form', 'route' => ['about_us.destroy', 'id' => $aboutUs->id]]) !!}
                 {!! Form::button('<i class="glyphicon glyphicon-trash"></i>' . trans('about_us.delete'), ['onclick' => "return del_pro('You really want to delete this about us')",'title' => 'Delete About us', 'class' => 'btn btn-round btn-danger', 'type' => 'submit']) !!}
                 {!! Form::close() !!}
+                @endrole
             </div>
         </div>
         <div class="clearfix"></div>
@@ -103,10 +105,10 @@
                                     <td>
                                         @if ($aboutUs->status == 1)
                                             <span
-                                                class="label label-success">{{ trans('about_us.label_status_enable') }}</span>
+                                                    class="label label-success">{{ trans('about_us.label_status_enable') }}</span>
                                         @else
                                             <span
-                                                class="label label-warning">{{ trans('about_us.label_status_disable') }}</span>
+                                                    class="label label-warning">{{ trans('about_us.label_status_disable') }}</span>
                                         @endif
                                     </td>
                                 </tr>

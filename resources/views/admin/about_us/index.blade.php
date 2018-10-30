@@ -101,10 +101,12 @@
                                             <i class="fa fa-eye padding"></i>
                                         </a>
                                     @endif
+                                    @role('admin')
                                     {{--delete about--}}
                                     {!! Form::open(['method' => 'DELETE', 'class'=>'display_form', 'route' => ['about_us.destroy', 'id' => $key->id]]) !!}
                                     {!! Form::button('<i class="fa fa-trash"></i>', ['onclick'=>"return del_pro('You really want to delete this aboutus')",'title' => 'Delete Aboutus', 'class' => 'btn btn-xs btn-danger', 'type' => 'submit']) !!}
                                     {!! Form::close() !!}
+                                    @endrole
                                 </td>
                             </tr>
                         @endforeach

@@ -13,7 +13,8 @@
         "laravelcollective/html": "^5.4.0",
         "spatie/laravel-permission": "^2.21",
         "unisharp/laravel-filemanager": "^1.9",
-        "yajra/laravel-datatables-oracle": "^8.7"
+        "yajra/laravel-datatables-oracle": "^8.7",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
